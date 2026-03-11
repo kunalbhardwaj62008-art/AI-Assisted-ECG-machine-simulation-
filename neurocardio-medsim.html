@@ -1,12 +1,12 @@
-<!DOCTYPE html>
-<!-- saved from url=(0060)file:///C:/Users/rjshb/OneDrive/Desktop/medical_sim_pro.html -->
-<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>NeuroCardio MedSim Pro — Full Body Simulation Suite</title>
-<script src="./NeuroCardio MedSim Pro — Full Body Simulation Suite_files/three.min.js.download"></script>
-<link href="./NeuroCardio MedSim Pro — Full Body Simulation Suite_files/css2" rel="stylesheet">
-NeuroCardio MedSim Pro — Full Body Simulation Suite<style>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&family=Exo+2:wght@300;400;600&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<style>
 /* ══ THEME VARIABLES ══ */
 :root {
   --accent: #00ff88;
@@ -35,121 +35,111 @@ NeuroCardio MedSim Pro — Full Body Simulation Suite<style>
   --grid-color: rgba(80,20,20,0.5);
   --ecg-bg: #000000;
 }
-/* BLUE THEME */
 body.theme-blue {
-  --accent: #00d4ff; --accent-dim: #007a9a; --accent2: #4488ff;
-  --bg0: #020810; --bg1: #050d18; --bg2: #081525; --bg3: #0c1e30;
-  --panel: rgba(5,12,28,0.97); --border: rgba(0,212,255,0.2);
-  --border-b: rgba(0,212,255,0.6); --text: #00d4ff; --text-dim: rgba(0,212,255,0.45);
-  --text-dimmer: rgba(0,212,255,0.2); --glow: 0 0 12px rgba(0,212,255,0.3);
-  --glow-b: 0 0 20px rgba(0,212,255,0.6); --trace-color: #00d4ff;
-  --grid-color: rgba(20,40,80,0.6);
+  --accent:#00d4ff;--accent-dim:#007a9a;--accent2:#4488ff;
+  --bg0:#020810;--bg1:#050d18;--bg2:#081525;--bg3:#0c1e30;
+  --panel:rgba(5,12,28,0.97);--border:rgba(0,212,255,0.2);
+  --border-b:rgba(0,212,255,0.6);--text:#00d4ff;--text-dim:rgba(0,212,255,0.45);
+  --text-dimmer:rgba(0,212,255,0.2);--glow:0 0 12px rgba(0,212,255,0.3);
+  --glow-b:0 0 20px rgba(0,212,255,0.6);--trace-color:#00d4ff;
+  --grid-color:rgba(20,40,80,0.6);
 }
-/* AMBER THEME */
 body.theme-amber {
-  --accent: #ffb700; --accent-dim: #996e00; --accent2: #ff6622;
-  --bg0: #0a0800; --bg1: #140f00; --bg2: #1e1600; --bg3: #281e00;
-  --panel: rgba(20,15,0,0.97); --border: rgba(255,183,0,0.2);
-  --border-b: rgba(255,183,0,0.6); --text: #ffb700; --text-dim: rgba(255,183,0,0.45);
-  --text-dimmer: rgba(255,183,0,0.2); --glow: 0 0 12px rgba(255,183,0,0.3);
-  --glow-b: 0 0 20px rgba(255,183,0,0.6); --trace-color: #ffb700;
-  --grid-color: rgba(80,50,0,0.5);
+  --accent:#ffb700;--accent-dim:#996e00;--accent2:#ff6622;
+  --bg0:#0a0800;--bg1:#140f00;--bg2:#1e1600;--bg3:#281e00;
+  --panel:rgba(20,15,0,0.97);--border:rgba(255,183,0,0.2);
+  --border-b:rgba(255,183,0,0.6);--text:#ffb700;--text-dim:rgba(255,183,0,0.45);
+  --text-dimmer:rgba(255,183,0,0.2);--glow:0 0 12px rgba(255,183,0,0.3);
+  --glow-b:0 0 20px rgba(255,183,0,0.6);--trace-color:#ffb700;
+  --grid-color:rgba(80,50,0,0.5);
 }
-/* PURPLE THEME */
 body.theme-purple {
-  --accent: #cc44ff; --accent-dim: #771a99; --accent2: #ff44cc;
-  --bg0: #080010; --bg1: #0d0018; --bg2: #120020; --bg3: #180030;
-  --panel: rgba(12,0,24,0.97); --border: rgba(204,68,255,0.2);
-  --border-b: rgba(204,68,255,0.6); --text: #cc44ff; --text-dim: rgba(204,68,255,0.45);
-  --text-dimmer: rgba(204,68,255,0.2); --glow: 0 0 12px rgba(204,68,255,0.3);
-  --glow-b: 0 0 20px rgba(204,68,255,0.6); --trace-color: #cc44ff;
-  --grid-color: rgba(60,0,80,0.5);
+  --accent:#cc44ff;--accent-dim:#771a99;--accent2:#ff44cc;
+  --bg0:#080010;--bg1:#0d0018;--bg2:#120020;--bg3:#180030;
+  --panel:rgba(12,0,24,0.97);--border:rgba(204,68,255,0.2);
+  --border-b:rgba(204,68,255,0.6);--text:#cc44ff;--text-dim:rgba(204,68,255,0.45);
+  --text-dimmer:rgba(204,68,255,0.2);--glow:0 0 12px rgba(204,68,255,0.3);
+  --glow-b:0 0 20px rgba(204,68,255,0.6);--trace-color:#cc44ff;
+  --grid-color:rgba(60,0,80,0.5);
 }
-/* RED THEME */
 body.theme-red {
-  --accent: #ff4455; --accent-dim: #991122; --accent2: #ff8833;
-  --bg0: #0a0000; --bg1: #140000; --bg2: #1e0000; --bg3: #280000;
-  --panel: rgba(20,0,0,0.97); --border: rgba(255,68,85,0.2);
-  --border-b: rgba(255,68,85,0.6); --text: #ff4455; --text-dim: rgba(255,68,85,0.45);
-  --text-dimmer: rgba(255,68,85,0.2); --glow: 0 0 12px rgba(255,68,85,0.3);
-  --glow-b: 0 0 20px rgba(255,68,85,0.6); --trace-color: #ff4455;
-  --grid-color: rgba(80,0,0,0.5);
+  --accent:#ff4455;--accent-dim:#991122;--accent2:#ff8833;
+  --bg0:#0a0000;--bg1:#140000;--bg2:#1e0000;--bg3:#280000;
+  --panel:rgba(20,0,0,0.97);--border:rgba(255,68,85,0.2);
+  --border-b:rgba(255,68,85,0.6);--text:#ff4455;--text-dim:rgba(255,68,85,0.45);
+  --text-dimmer:rgba(255,68,85,0.2);--glow:0 0 12px rgba(255,68,85,0.3);
+  --glow-b:0 0 20px rgba(255,68,85,0.6);--trace-color:#ff4455;
+  --grid-color:rgba(80,0,0,0.5);
 }
 
-*{margin:0;padding:0;box-sizing:border-box;}
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
 
-body {
-  font-family: var(--font-ui);
-  background: var(--bg0);
-  color: var(--text);
-  overflow: hidden;
-  height: 100vh;
+html,body{
+  font-family:var(--font-ui);
+  background:var(--bg0);
+  color:var(--text);
   background-image:
-    radial-gradient(ellipse at 15% 50%, rgba(0,255,136,0.03) 0%, transparent 60%),
-    radial-gradient(ellipse at 85% 20%, rgba(0,170,255,0.025) 0%, transparent 50%);
-  transition: background 0.4s, color 0.4s;
+    radial-gradient(ellipse at 15% 50%,rgba(0,255,136,0.03) 0%,transparent 60%),
+    radial-gradient(ellipse at 85% 20%,rgba(0,170,255,0.025) 0%,transparent 50%);
+  transition:background 0.4s,color 0.4s;
+  overflow-x:hidden;
 }
-body::before {
-  content:''; position:fixed; inset:0; pointer-events:none; z-index:9999;
-  background: repeating-linear-gradient(0deg, transparent, transparent 2px, var(--scan-color) 2px, var(--scan-color) 4px);
+body::before{
+  content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;
+  background:repeating-linear-gradient(0deg,transparent,transparent 2px,var(--scan-color) 2px,var(--scan-color) 4px);
 }
 
-/* ══ ROOT LAYOUT ══ */
-.root {
-  display: grid;
-  grid-template-rows: 52px 1fr 180px;
-  grid-template-columns: 200px 1fr 260px 260px 240px;
-  height: 100vh;
-  gap: 0;
+/* ══ ROOT LAYOUT — Desktop ══ */
+.root{
+  display:grid;
+  grid-template-rows:52px 1fr 180px;
+  grid-template-columns:200px 1fr 260px 260px 240px;
+  height:100vh;
+  min-height:600px;
+  gap:0;
+  overflow:hidden;
 }
 
 /* ══ HEADER ══ */
-header {
-  grid-column: 1/-1;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 16px;
-  background: linear-gradient(90deg, var(--bg2), var(--bg1), var(--bg2));
-  border-bottom: 1px solid var(--border-b);
-  position: relative;
-  overflow: hidden;
-  z-index: 100;
+header{
+  grid-column:1/-1;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 16px;
+  background:linear-gradient(90deg,var(--bg2),var(--bg1),var(--bg2));
+  border-bottom:1px solid var(--border-b);
+  position:relative;overflow:hidden;z-index:100;
+  flex-wrap:wrap;gap:4px;
 }
-header::after {
-  content:''; position:absolute; bottom:0; left:0; right:0; height:1px;
-  background: linear-gradient(90deg, transparent, var(--accent), transparent);
-  animation: hglow 3s ease-in-out infinite;
+header::after{
+  content:'';position:absolute;bottom:0;left:0;right:0;height:1px;
+  background:linear-gradient(90deg,transparent,var(--accent),transparent);
+  animation:hglow 3s ease-in-out infinite;
 }
 @keyframes hglow{0%,100%{opacity:0.4}50%{opacity:1}}
 
-.logo {
-  font-family: var(--font-title); font-size:1em; font-weight:900;
-  letter-spacing:0.08em; color:var(--accent);
-  text-shadow: var(--glow-b);
-  white-space:nowrap;
+.logo{
+  font-family:var(--font-title);font-size:1em;font-weight:900;
+  letter-spacing:0.08em;color:var(--accent);text-shadow:var(--glow-b);white-space:nowrap;
 }
 .logo span{color:var(--accent2);}
 .logo sub{font-size:0.5em;color:var(--text-dim);letter-spacing:0.05em;}
 
-.header-center {
-  font-family:var(--font-title); font-size:0.55em; letter-spacing:0.25em;
-  color:var(--text-dim); text-transform:uppercase; text-align:center;
+.header-center{
+  font-family:var(--font-title);font-size:0.55em;letter-spacing:0.25em;
+  color:var(--text-dim);text-transform:uppercase;text-align:center;
 }
-
-.header-right{display:flex;align-items:center;gap:10px;}
-.status-dot{width:7px;height:7px;border-radius:50%;background:var(--accent);box-shadow:0 0 8px var(--accent);animation:blink 1.2s ease-in-out infinite;}
+.header-right{display:flex;align-items:center;gap:10px;flex-wrap:wrap;}
+.status-dot{width:7px;height:7px;border-radius:50%;background:var(--accent);box-shadow:0 0 8px var(--accent);animation:blink 1.2s ease-in-out infinite;flex-shrink:0;}
 @keyframes blink{0%,100%{opacity:1}50%{opacity:0.3}}
 .status-dot.red{background:#ff3344;box-shadow:0 0 8px #ff3344;}
 .status-dot.amber{background:#ffaa00;box-shadow:0 0 8px #ffaa00;}
 .hdr-txt{font-family:var(--font-mono);font-size:0.72em;color:var(--text-dim);}
 
-/* ── THEME SWITCHER in header ── */
 .theme-switcher{display:flex;gap:4px;align-items:center;}
 .theme-btn{
   width:16px;height:16px;border-radius:50%;cursor:pointer;
   border:2px solid rgba(255,255,255,0.2);
-  transition:transform 0.2s,border-color 0.2s;
+  transition:transform 0.2s,border-color 0.2s;flex-shrink:0;
 }
 .theme-btn:hover,.theme-btn.active{transform:scale(1.3);border-color:rgba(255,255,255,0.8);}
 .theme-btn[data-theme="green"]{background:#00ff88;}
@@ -159,56 +149,47 @@ header::after {
 .theme-btn[data-theme="red"]{background:#ff4455;}
 
 /* ══ PANELS ══ */
-.panel-header {
-  padding: 8px 12px;
-  font-family: var(--font-title);
-  font-size: 0.58em;
-  letter-spacing: 0.18em;
-  color: var(--accent);
-  border-bottom: 1px solid var(--border);
-  background: rgba(0,0,0,0.4);
-  text-transform: uppercase;
-  display: flex;
-  align-items: center;
-  gap: 7px;
-  white-space:nowrap;
-  overflow:hidden;
+.panel-header{
+  padding:8px 12px;font-family:var(--font-title);font-size:0.58em;
+  letter-spacing:0.18em;color:var(--accent);border-bottom:1px solid var(--border);
+  background:rgba(0,0,0,0.4);text-transform:uppercase;
+  display:flex;align-items:center;gap:7px;white-space:nowrap;overflow:hidden;flex-shrink:0;
 }
 .panel-header::before{content:'';width:3px;height:12px;background:var(--accent);border-radius:2px;flex-shrink:0;}
 
-/* ══ LEFT: ECG + TORSO ══ */
-.left-panel {
-  grid-row:2/3; grid-column:1/2;
-  background:var(--panel); border-right:1px solid var(--border);
-  display:flex; flex-direction:column; overflow:hidden;
+/* ══ LEFT: ELECTRODE ══ */
+.left-panel{
+  grid-row:2/3;grid-column:1/2;
+  background:var(--panel);border-right:1px solid var(--border);
+  display:flex;flex-direction:column;overflow:hidden;
 }
-#torsoCanvas{flex:1;width:100%;background:#000;cursor:crosshair;display:block;}
+#torsoCanvas{flex:1;width:100%;background:#000;cursor:crosshair;display:block;touch-action:none;}
 .placement-score{
-  padding:5px 10px; border-top:1px solid var(--border);
-  font-family:var(--font-mono); font-size:0.72em;
-  display:flex; align-items:center; gap:6px;
+  padding:5px 10px;border-top:1px solid var(--border);
+  font-family:var(--font-mono);font-size:0.72em;
+  display:flex;align-items:center;gap:6px;flex-shrink:0;
 }
 .score-bar{height:4px;flex:1;background:#111;border-radius:2px;overflow:hidden;}
 .score-fill{height:100%;border-radius:2px;transition:width 0.5s,background 0.5s;}
 
-/* ══ CENTER: ECG DISPLAY ══ */
-.center-panel {
-  grid-row:2/3; grid-column:2/3;
-  display:flex; flex-direction:column;
-  background:var(--panel); border-right:1px solid var(--border);
+/* ══ CENTER: ECG ══ */
+.center-panel{
+  grid-row:2/3;grid-column:2/3;
+  display:flex;flex-direction:column;
+  background:var(--panel);border-right:1px solid var(--border);
   overflow:hidden;
 }
 .lead-tabs{
-  display:flex; padding:5px 8px; gap:3px;
-  background:rgba(0,0,0,0.4); border-bottom:1px solid var(--border);
-  overflow-x:auto; scrollbar-width:none;
+  display:flex;padding:5px 8px;gap:3px;
+  background:rgba(0,0,0,0.4);border-bottom:1px solid var(--border);
+  overflow-x:auto;scrollbar-width:none;flex-shrink:0;
 }
 .lead-tabs::-webkit-scrollbar{display:none;}
 .lead-tab{
-  padding:3px 8px; font-family:var(--font-mono); font-size:0.7em;
-  background:rgba(0,0,0,0.4); border:1px solid var(--border);
-  color:var(--text-dim); cursor:pointer; border-radius:3px;
-  transition:all 0.2s; white-space:nowrap;
+  padding:3px 8px;font-family:var(--font-mono);font-size:0.7em;
+  background:rgba(0,0,0,0.4);border:1px solid var(--border);
+  color:var(--text-dim);cursor:pointer;border-radius:3px;
+  transition:all 0.2s;white-space:nowrap;
 }
 .lead-tab:hover{background:rgba(255,255,255,0.06);color:var(--accent);}
 .lead-tab.active{background:rgba(255,255,255,0.1);border-color:var(--accent);color:var(--accent);box-shadow:var(--glow);}
@@ -226,87 +207,79 @@ header::after {
 }
 
 /* ══ 3D ORGAN PANELS ══ */
-.organ-panel {
-  grid-row:2/3;
-  background:var(--panel);
+.organ-panel{
+  grid-row:2/3;background:var(--panel);
   border-right:1px solid var(--border);
-  display:flex; flex-direction:column; overflow:hidden;
-  position:relative;
+  display:flex;flex-direction:column;overflow:hidden;overflow-y:auto;
+  position:relative;scrollbar-width:thin;scrollbar-color:var(--border) transparent;
 }
 .organ-panel:nth-of-type(1){grid-column:3/4;}
 .organ-panel:nth-of-type(2){grid-column:4/5;}
+.organ-panel::-webkit-scrollbar{width:3px;}
+.organ-panel::-webkit-scrollbar-thumb{background:var(--border);}
 
-.organ-canvas-wrap{flex:1;position:relative;min-height:0;}
+.organ-canvas-wrap{flex:0 0 auto;height:180px;position:relative;}
 .organ-canvas-wrap canvas{width:100%;height:100%;display:block;background:#000;}
 
 .organ-info{
-  padding:4px 8px; border-top:1px solid var(--border);
-  background:rgba(0,0,0,0.5); display:flex; flex-direction:column; gap:2px;
+  padding:4px 8px;border-top:1px solid var(--border);
+  background:rgba(0,0,0,0.5);display:flex;flex-direction:column;gap:2px;flex-shrink:0;
 }
-.phase-row{
-  display:flex; align-items:center; gap:5px;
-  font-family:var(--font-mono); font-size:0.6em;
-}
+.phase-row{display:flex;align-items:center;gap:5px;font-family:var(--font-mono);font-size:0.6em;}
 .phase-lbl{color:var(--text-dim);width:72px;flex-shrink:0;}
 .phase-bar-w{flex:1;height:4px;background:#111;border-radius:2px;overflow:hidden;}
 .phase-bar-f{height:100%;border-radius:2px;transition:width 0.08s linear;}
 
 .node-grid{
-  display:grid; grid-template-columns:1fr 1fr; gap:2px;
-  padding:4px 8px; border-top:1px solid var(--border);
+  display:grid;grid-template-columns:1fr 1fr;gap:2px;
+  padding:4px 8px;border-top:1px solid var(--border);flex-shrink:0;
 }
 .node-cell{
-  font-family:var(--font-mono); font-size:0.58em;
-  padding:2px 4px; border-radius:2px;
-  border:1px solid var(--text-dimmer); background:rgba(0,0,0,0.5);
-  display:flex; flex-direction:column; gap:1px;
+  font-family:var(--font-mono);font-size:0.58em;
+  padding:2px 4px;border-radius:2px;
+  border:1px solid var(--text-dimmer);background:rgba(0,0,0,0.5);
+  display:flex;flex-direction:column;gap:1px;
   transition:border-color 0.15s,background 0.15s;
 }
 .node-cell.active{border-color:rgba(255,60,60,0.7);background:rgba(255,30,30,0.12);}
 .node-name{color:var(--text-dim);font-size:0.8em;}
 .node-state{color:var(--accent);}
 
-.path-bar{
-  padding:4px 8px; border-top:1px solid var(--border);
-}
+.path-bar{padding:4px 8px;border-top:1px solid var(--border);flex-shrink:0;}
 .path-title{font-family:var(--font-title);font-size:0.5em;letter-spacing:0.15em;color:var(--text-dim);text-transform:uppercase;margin-bottom:3px;}
 .path-nodes{display:flex;align-items:center;gap:2px;flex-wrap:wrap;font-family:var(--font-mono);font-size:0.58em;}
 .path-node{
-  padding:2px 4px; border:1px solid var(--text-dimmer);
-  border-radius:2px; color:var(--text-dim); background:rgba(0,0,0,0.4);
+  padding:2px 4px;border:1px solid var(--text-dimmer);
+  border-radius:2px;color:var(--text-dim);background:rgba(0,0,0,0.4);
   transition:all 0.12s;
 }
 .path-node.lit{border-color:var(--warn);color:var(--warn);background:rgba(255,170,0,0.15);box-shadow:0 0 5px rgba(255,170,0,0.3);}
 .path-arrow{color:var(--text-dimmer);font-size:0.9em;}
 
-.freq-wrap{padding:4px 8px;border-top:1px solid var(--border);}
+.freq-wrap{padding:4px 8px;border-top:1px solid var(--border);flex-shrink:0;}
 .freq-title{font-family:var(--font-title);font-size:0.5em;letter-spacing:0.12em;color:var(--text-dim);text-transform:uppercase;margin-bottom:3px;}
 .freq-canvas{width:100%;height:40px;background:#000;border:1px solid var(--border);border-radius:2px;display:block;}
 .freq-labels{display:flex;justify-content:space-between;font-family:var(--font-mono);font-size:0.5em;color:var(--text-dimmer);margin-top:1px;}
 
-.organ-view-btns{
-  padding:4px 8px; border-top:1px solid var(--border);
-  display:flex; gap:3px; flex-wrap:wrap;
-}
+.organ-view-btns{padding:4px 8px;border-top:1px solid var(--border);display:flex;gap:3px;flex-wrap:wrap;flex-shrink:0;}
 .ovbtn{
-  font-family:var(--font-mono); font-size:0.58em;
-  padding:2px 6px; border:1px solid var(--border);
-  background:rgba(0,0,0,0.3); color:var(--text-dim);
-  cursor:pointer; border-radius:2px; transition:all 0.2s;
+  font-family:var(--font-mono);font-size:0.58em;padding:2px 6px;
+  border:1px solid var(--border);background:rgba(0,0,0,0.3);color:var(--text-dim);
+  cursor:pointer;border-radius:2px;transition:all 0.2s;
 }
 .ovbtn:hover,.ovbtn.active{background:rgba(255,255,255,0.1);border-color:var(--accent);color:var(--accent);}
 
-/* ══ RIGHT PANEL: SIGNAL CHAIN + VITALS ══ */
-.right-panel {
-  grid-row:2/3; grid-column:5/6;
+/* ══ RIGHT PANEL ══ */
+.right-panel{
+  grid-row:2/3;grid-column:5/6;
   background:var(--panel);
-  display:flex; flex-direction:column; overflow:hidden; overflow-y:auto;
-  scrollbar-width:thin; scrollbar-color:var(--border) transparent;
+  display:flex;flex-direction:column;overflow:hidden;overflow-y:auto;
+  scrollbar-width:thin;scrollbar-color:var(--border) transparent;
 }
 .right-panel::-webkit-scrollbar{width:4px;}
 .right-panel::-webkit-scrollbar-thumb{background:var(--border);}
 
-.chain-block{border-bottom:1px solid var(--border);padding:8px 10px;}
+.chain-block{border-bottom:1px solid var(--border);padding:8px 10px;flex-shrink:0;}
 .chain-title{
   font-family:var(--font-title);font-size:0.55em;letter-spacing:0.12em;
   color:var(--text-dim);text-transform:uppercase;margin-bottom:6px;
@@ -329,12 +302,10 @@ header::after {
 .mbar{width:100%;height:5px;background:#111;border-radius:3px;margin-top:3px;overflow:hidden;}
 .mfill{height:100%;border-radius:3px;transition:width 0.3s,background 0.3s;}
 
-/* Vital signs cards */
-.vitals-grid{display:grid;grid-template-columns:1fr 1fr;gap:4px;padding:6px 8px;}
+.vitals-grid{display:grid;grid-template-columns:1fr 1fr;gap:4px;padding:6px 8px;flex-shrink:0;}
 .vital-card{
   background:rgba(0,0,0,0.5);border:1px solid var(--border);border-radius:4px;
-  padding:5px 7px;display:flex;flex-direction:column;gap:1px;
-  transition:border-color 0.2s;
+  padding:5px 7px;display:flex;flex-direction:column;gap:1px;transition:border-color 0.2s;
 }
 .vital-card:hover{border-color:var(--accent);}
 .vital-lbl{font-family:var(--font-title);font-size:0.45em;letter-spacing:0.1em;color:var(--text-dim);text-transform:uppercase;}
@@ -343,35 +314,29 @@ header::after {
 .vital-bar{height:3px;background:#111;border-radius:2px;margin-top:3px;overflow:hidden;}
 .vital-bar-f{height:100%;border-radius:2px;transition:width 0.5s;}
 
-/* OSC panel */
-.osc-panel{border-bottom:1px solid var(--border);}
+.osc-panel{border-bottom:1px solid var(--border);flex-shrink:0;}
 .osc-tabs{display:flex;border-bottom:1px solid var(--border);}
 .osc-tab{
   flex:1;padding:4px;font-family:var(--font-mono);font-size:0.62em;
   text-align:center;cursor:pointer;color:var(--text-dim);
-  border-right:1px solid var(--border);transition:all 0.2s;
-  background:rgba(0,0,0,0.3);
+  border-right:1px solid var(--border);transition:all 0.2s;background:rgba(0,0,0,0.3);
 }
 .osc-tab:last-child{border-right:none;}
 .osc-tab:hover,.osc-tab.active{background:rgba(255,255,255,0.08);color:var(--accent);}
 #oscCanvas{width:100%;height:65px;display:block;background:#000;}
 .osc-readout{
   padding:3px 8px;display:flex;gap:8px;font-family:var(--font-mono);
-  font-size:0.62em;border-top:1px solid var(--border);
-  background:rgba(0,0,0,0.4);
+  font-size:0.62em;border-top:1px solid var(--border);background:rgba(0,0,0,0.4);
 }
 .osc-lbl{color:var(--text-dim);}.osc-val{color:var(--accent);}
 
 /* ══ BOTTOM CONTROLS ══ */
-.bottom-panel {
-  grid-column:1/-1;
-  border-top:1px solid var(--border);
-  display:grid;
-  grid-template-columns:1fr 1fr 1fr 1fr 1fr 1fr;
-  background:var(--bg1);
-  overflow:hidden;
+.bottom-panel{
+  grid-column:1/-1;border-top:1px solid var(--border);
+  display:grid;grid-template-columns:1fr 1fr 1fr 1fr 1fr 1fr;
+  background:var(--bg1);overflow:hidden;
 }
-.ctrl-section{padding:8px 12px;border-right:1px solid var(--border);}
+.ctrl-section{padding:8px 12px;border-right:1px solid var(--border);overflow:hidden;}
 .ctrl-section:last-child{border-right:none;}
 .ctrl-title{
   font-family:var(--font-title);font-size:0.5em;letter-spacing:0.18em;
@@ -383,11 +348,15 @@ header::after {
 input[type=range]{
   flex:1;-webkit-appearance:none;height:3px;
   background:linear-gradient(90deg,var(--accent-dim),var(--accent));
-  border-radius:2px;outline:none;cursor:pointer;
+  border-radius:2px;outline:none;cursor:pointer;min-width:0;
 }
 input[type=range]::-webkit-slider-thumb{
-  -webkit-appearance:none;width:11px;height:11px;
+  -webkit-appearance:none;width:14px;height:14px;
   background:var(--accent);border-radius:50%;box-shadow:0 0 5px var(--accent);cursor:pointer;
+}
+input[type=range]::-moz-range-thumb{
+  width:14px;height:14px;background:var(--accent);border-radius:50%;
+  box-shadow:0 0 5px var(--accent);cursor:pointer;border:none;
 }
 .ctrl-val{font-family:var(--font-mono);font-size:0.66em;color:var(--accent);width:32px;text-align:right;flex-shrink:0;}
 select{
@@ -401,12 +370,13 @@ button{
   font-family:var(--font-mono);font-size:0.62em;padding:3px 7px;
   border:1px solid var(--border);background:rgba(0,0,0,0.5);
   color:var(--text-dim);cursor:pointer;border-radius:2px;transition:all 0.2s;
+  touch-action:manipulation;
 }
-button:hover{background:rgba(255,255,255,0.08);border-color:var(--accent);color:var(--accent);}
+button:hover,button:active{background:rgba(255,255,255,0.08);border-color:var(--accent);color:var(--accent);}
 button.danger{border-color:rgba(255,51,68,0.4);color:rgba(255,51,68,0.7);}
-button.danger:hover{background:rgba(255,51,68,0.12);border-color:#ff3344;color:#ff3344;}
+button.danger:hover,button.danger:active{background:rgba(255,51,68,0.12);border-color:#ff3344;color:#ff3344;}
 button.warn-btn{border-color:rgba(255,170,0,0.4);color:rgba(255,170,0,0.7);}
-button.warn-btn:hover{background:rgba(255,170,0,0.1);border-color:#ffaa00;color:#ffaa00;}
+button.warn-btn:hover,button.warn-btn:active{background:rgba(255,170,0,0.1);border-color:#ffaa00;color:#ffaa00;}
 button.active-btn{background:rgba(0,255,136,0.12);border-color:var(--accent);color:var(--accent);}
 .fault-list{max-height:40px;overflow-y:auto;scrollbar-width:thin;}
 .fault-item{
@@ -419,8 +389,7 @@ button.active-btn{background:rgba(0,255,136,0.12);border-color:var(--accent);col
 .fault-x{cursor:pointer;color:rgba(255,51,68,0.5);padding:0 3px;}
 .fault-x:hover{color:#ff3344;}
 
-/* Impedance grid */
-.imp-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:2px;padding:4px 10px;border-top:1px solid var(--border);}
+.imp-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:2px;padding:4px 10px;border-top:1px solid var(--border);flex-shrink:0;}
 .imp-cell{background:rgba(0,0,0,0.4);border:1px solid var(--border);border-radius:2px;padding:2px 3px;text-align:center;}
 .imp-name{font-family:var(--font-mono);font-size:0.5em;color:var(--text-dim);}
 .imp-val{font-family:var(--font-mono);font-size:0.6em;color:var(--accent);}
@@ -428,113 +397,155 @@ button.active-btn{background:rgba(0,255,136,0.12);border-color:var(--accent);col
 .imp-val.critical{color:#ff3344;}
 
 .diag-list{padding:4px 8px;}
-.elec-legend{
-  display:flex;flex-wrap:wrap;gap:3px;padding:4px 10px;
-  border-top:1px solid var(--border);
-}
+.elec-legend{display:flex;flex-wrap:wrap;gap:3px;padding:4px 10px;border-top:1px solid var(--border);flex-shrink:0;}
 .elec-item{display:flex;align-items:center;gap:3px;font-family:var(--font-mono);font-size:0.55em;color:var(--text-dim);}
 .elec-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;}
 
-/* ── TOOLTIP ── */
 .tooltip{
   position:fixed;display:none;z-index:9998;
   background:rgba(0,0,0,0.9);border:1px solid var(--border);
   color:var(--accent);font-family:var(--font-mono);font-size:0.72em;
-  padding:6px 10px;border-radius:4px;pointer-events:none;
-  box-shadow:var(--glow);
+  padding:6px 10px;border-radius:4px;pointer-events:none;box-shadow:var(--glow);
 }
-
-#beatFlash{
-  position:fixed;inset:0;pointer-events:none;z-index:9000;
-  background:rgba(0,255,136,0.015);opacity:0;transition:opacity 0.05s;
-}
-
-/* ── ALERT OVERLAY ── */
+#beatFlash{position:fixed;inset:0;pointer-events:none;z-index:9000;background:rgba(0,255,136,0.015);opacity:0;transition:opacity 0.05s;}
 .alert-banner{
   position:fixed;top:60px;left:50%;transform:translateX(-50%);
   background:rgba(255,51,68,0.15);border:1px solid #ff3344;
   color:#ff4455;font-family:var(--font-mono);font-size:0.8em;
   padding:6px 18px;border-radius:4px;z-index:9990;
-  display:none;animation:pulse-alert 1s ease-in-out infinite;
-  text-align:center;
+  display:none;animation:pulse-alert 1s ease-in-out infinite;text-align:center;
+  white-space:nowrap;
 }
 @keyframes pulse-alert{0%,100%{box-shadow:0 0 10px rgba(255,51,68,0.3)}50%{box-shadow:0 0 25px rgba(255,51,68,0.7)}}
 
-/* ── RECORDING INDICATOR ── */
-.rec-indicator{
-  display:none;align-items:center;gap:5px;
-  font-family:var(--font-mono);font-size:0.7em;color:#ff3344;
-}
+.rec-indicator{display:none;align-items:center;gap:5px;font-family:var(--font-mono);font-size:0.7em;color:#ff3344;}
 .rec-dot{width:8px;height:8px;border-radius:50%;background:#ff3344;animation:blink 0.8s ease-in-out infinite;}
 .recording .rec-indicator{display:flex;}
 
-/* ── MINI HEART ICON PULSE ── */
-@keyframes heartbeat{0%,100%{transform:scale(1)}14%{transform:scale(1.2)}28%{transform:scale(1)}}
-
-/* scrollbar */
 *::-webkit-scrollbar{width:4px;height:4px;}
 *::-webkit-scrollbar-track{background:transparent;}
 *::-webkit-scrollbar-thumb{background:var(--border);border-radius:2px;}
 
-/* ── ANNOTATION PANEL ── */
-.annot-panel{padding:6px 10px;border-top:1px solid var(--border);}
-.annot-title{font-family:var(--font-title);font-size:0.5em;letter-spacing:0.15em;color:var(--text-dim);text-transform:uppercase;margin-bottom:4px;}
 .annot-list{font-family:var(--font-mono);font-size:0.62em;color:var(--text-dim);line-height:1.5;max-height:40px;overflow-y:auto;}
 
-/* Print mode */
-@media print{body{overflow:auto;}.root{height:auto;}}
+/* ══ MOBILE MENU BUTTON ══ */
+.mobile-menu-btn{
+  display:none;font-family:var(--font-mono);font-size:0.7em;
+  padding:3px 8px;border:1px solid var(--border);background:rgba(0,0,0,0.5);
+  color:var(--text-dim);cursor:pointer;border-radius:2px;
+}
 
+/* ══ RESPONSIVE: TABLET (≤1200px) ══ */
+@media (max-width:1200px) and (min-width:769px){
+  .root{
+    grid-template-rows:52px 1fr 1fr auto;
+    grid-template-columns:180px 1fr 240px;
+    height:auto;
+    min-height:100vh;
+    overflow-y:auto;
+  }
+  .left-panel{grid-row:2/3;grid-column:1/2;}
+  .center-panel{grid-row:2/3;grid-column:2/3;}
+  .organ-panel:nth-of-type(1){grid-row:3/4;grid-column:1/2;}
+  .organ-panel:nth-of-type(2){grid-row:3/4;grid-column:2/3;}
+  .right-panel{grid-row:2/4;grid-column:3/4;}
+  .bottom-panel{
+    grid-column:1/-1;grid-row:4/5;
+    grid-template-columns:1fr 1fr 1fr;
+    height:auto;
+    overflow:visible;
+  }
+  .ctrl-section{padding:6px 10px;}
+  .header-center{display:none;}
+}
+
+/* ══ RESPONSIVE: MOBILE (≤768px) ══ */
+@media (max-width:768px){
+  .root{
+    display:flex;
+    flex-direction:column;
+    height:auto;
+    min-height:100vh;
+    overflow-y:auto;
+  }
+  header{
+    height:auto;padding:8px 10px;
+    grid-column:unset;
+  }
+  .header-center{display:none;}
+  .logo{font-size:0.85em;}
+  .hdr-txt{font-size:0.62em;}
+
+  .left-panel,.center-panel,.organ-panel,.right-panel,.bottom-panel{
+    grid-column:unset;grid-row:unset;
+    width:100%;border-right:none;border-bottom:1px solid var(--border);
+  }
+  #torsoCanvas{height:200px;flex:none;}
+  .ecg-area{height:220px;flex:none;}
+  .organ-canvas-wrap{height:160px;}
+  #oscCanvas{height:55px;}
+
+  .bottom-panel{
+    display:flex;flex-direction:column;
+    overflow:visible;
+  }
+  .ctrl-section{border-right:none;border-bottom:1px solid var(--border);}
+  .ctrl-section:last-child{border-bottom:none;}
+  .right-panel{max-height:none;overflow-y:visible;}
+}
+
+@media print{body{overflow:auto;}.root{height:auto;}}
 </style>
 </head>
 <body>
 
-<div id="beatFlash" style="opacity: 0;"></div>
+<div id="beatFlash"></div>
 <div class="tooltip" id="tooltip"></div>
-<div class="alert-banner" id="alertBanner" style="display: none;">⚠ CRITICAL ARRHYTHMIA DETECTED — IMMEDIATE INTERVENTION REQUIRED</div>
+<div class="alert-banner" id="alertBanner">⚠ CRITICAL ARRHYTHMIA DETECTED — IMMEDIATE INTERVENTION REQUIRED</div>
 
 <div class="root">
 
-<!-- ══════════ HEADER ══════════ -->
+<!-- ══ HEADER ══ -->
 <header>
   <div class="logo">NEURO<span>CARDIO</span> MedSim<sub>PRO v6.0</sub></div>
   <div class="header-center">Full Body Medical Simulation Suite · ECG · 3D Heart · Brain · Lungs · Kidneys</div>
   <div class="header-right">
     <div class="theme-switcher">
-      <div class="theme-btn active" data-theme="green" title="Clinical Green" onclick="setTheme(&#39;green&#39;,this)"></div>
-      <div class="theme-btn" data-theme="blue" title="ICU Blue" onclick="setTheme(&#39;blue&#39;,this)"></div>
-      <div class="theme-btn" data-theme="amber" title="Radiology Amber" onclick="setTheme(&#39;amber&#39;,this)"></div>
-      <div class="theme-btn" data-theme="purple" title="Neural Purple" onclick="setTheme(&#39;purple&#39;,this)"></div>
-      <div class="theme-btn" data-theme="red" title="Emergency Red" onclick="setTheme(&#39;red&#39;,this)"></div>
+      <div class="theme-btn active" data-theme="green" title="Clinical Green" onclick="setTheme('green',this)"></div>
+      <div class="theme-btn" data-theme="blue" title="ICU Blue" onclick="setTheme('blue',this)"></div>
+      <div class="theme-btn" data-theme="amber" title="Radiology Amber" onclick="setTheme('amber',this)"></div>
+      <div class="theme-btn" data-theme="purple" title="Neural Purple" onclick="setTheme('purple',this)"></div>
+      <div class="theme-btn" data-theme="red" title="Emergency Red" onclick="setTheme('red',this)"></div>
     </div>
     <span style="color:var(--text-dimmer);padding:0 4px;">|</span>
     <div class="rec-indicator"><div class="rec-dot"></div><span>REC</span></div>
     <div class="status-dot" id="sysStatusDot"></div>
     <span class="hdr-txt" id="sysStatusText">SYSTEM OK</span>
     <span class="hdr-txt" style="color:var(--text-dimmer)">|</span>
-    <span class="hdr-txt" id="clockDisplay">11:26:50</span>
+    <span class="hdr-txt" id="clockDisplay">--:--:--</span>
     <span class="hdr-txt" style="color:var(--text-dimmer)">|</span>
-    <span class="hdr-txt" id="frameRate">60 fps</span>
+    <span class="hdr-txt" id="frameRate">-- fps</span>
   </div>
 </header>
 
-<!-- ══════════ LEFT: ELECTRODE PLACEMENT ══════════ -->
+<!-- ══ LEFT: ELECTRODE PLACEMENT ══ -->
 <div class="left-panel">
   <div class="panel-header">⚡ Electrode Placement</div>
-  <canvas id="torsoCanvas" width="199" height="347"></canvas>
-  <div class="imp-grid" id="impedanceGrid"><div class="imp-cell"><div class="imp-name">RA</div><div class="imp-val ">8Ω</div></div><div class="imp-cell"><div class="imp-name">LA</div><div class="imp-val ">8Ω</div></div><div class="imp-cell"><div class="imp-name">RL</div><div class="imp-val ">8Ω</div></div><div class="imp-cell"><div class="imp-name">LL</div><div class="imp-val ">6Ω</div></div><div class="imp-cell"><div class="imp-name">V1</div><div class="imp-val ">5Ω</div></div><div class="imp-cell"><div class="imp-name">V2</div><div class="imp-val ">7Ω</div></div><div class="imp-cell"><div class="imp-name">V3</div><div class="imp-val ">6Ω</div></div><div class="imp-cell"><div class="imp-name">V4</div><div class="imp-val ">8Ω</div></div><div class="imp-cell"><div class="imp-name">V5</div><div class="imp-val ">7Ω</div></div><div class="imp-cell"><div class="imp-name">V6</div><div class="imp-val ">7Ω</div></div></div>
+  <canvas id="torsoCanvas"></canvas>
+  <div class="imp-grid" id="impedanceGrid"></div>
   <div class="placement-score">
     <span style="font-family:var(--font-mono);font-size:0.7em;color:var(--text-dim);">PLACEMENT</span>
-    <div class="score-bar"><div class="score-fill" id="scoreFill" style="width: 100%; background: rgb(0, 255, 136);"></div></div>
+    <div class="score-bar"><div class="score-fill" id="scoreFill"></div></div>
     <span id="scoreText" style="font-family:var(--font-mono);font-size:0.75em;color:var(--accent)">100%</span>
   </div>
-  <div class="elec-legend" id="electrodeLegend"><div class="elec-item"><div class="elec-dot" style="background:#ff4466"></div>RA</div><div class="elec-item"><div class="elec-dot" style="background:#ffaa00"></div>LA</div><div class="elec-item"><div class="elec-dot" style="background:#00cc66"></div>RL</div><div class="elec-item"><div class="elec-dot" style="background:#00aaff"></div>LL</div><div class="elec-item"><div class="elec-dot" style="background:#ff44aa"></div>V1</div><div class="elec-item"><div class="elec-dot" style="background:#aa44ff"></div>V2</div><div class="elec-item"><div class="elec-dot" style="background:#44aaff"></div>V3</div><div class="elec-item"><div class="elec-dot" style="background:#44ffaa"></div>V4</div><div class="elec-item"><div class="elec-dot" style="background:#ffff44"></div>V5</div><div class="elec-item"><div class="elec-dot" style="background:#ff8844"></div>V6</div></div>
+  <div class="elec-legend" id="electrodeLegend"></div>
 </div>
 
-<!-- ══════════ CENTER: ECG DISPLAY ══════════ -->
+<!-- ══ CENTER: ECG DISPLAY ══ -->
 <div class="center-panel">
-  <div class="lead-tabs" id="leadTabs"><div class="lead-tab active">I</div><div class="lead-tab">II</div><div class="lead-tab">III</div><div class="lead-tab">aVR</div><div class="lead-tab">aVL</div><div class="lead-tab">aVF</div><div class="lead-tab">V1</div><div class="lead-tab">V2</div><div class="lead-tab">V3</div><div class="lead-tab">V4</div><div class="lead-tab">V5</div><div class="lead-tab">V6</div></div>
+  <div class="lead-tabs" id="leadTabs"></div>
   <div class="ecg-area">
-    <canvas id="ecgCanvas" width="311" height="405"></canvas>
+    <canvas id="ecgCanvas"></canvas>
     <div class="ecg-overlay">
       <div class="ecg-metric"><span class="lbl">HR </span><span class="val" id="hrReadout">72</span><span class="lbl"> bpm</span></div>
       <div class="ecg-metric"><span class="lbl">RR </span><span class="val" id="rrReadout">833</span><span class="lbl"> ms</span></div>
@@ -544,16 +555,15 @@ button.active-btn{background:rgba(0,255,136,0.12);border-color:var(--accent);col
     </div>
     <div class="ecg-overlay-right">
       <div class="ecg-metric"><span class="lbl">25mm/s · 10mm/mV</span></div>
-      <div id="rhythmBadge" style="border-color: rgb(0, 255, 136); background: rgba(0, 0, 0, 0.4); color: rgb(0, 255, 136);">Normal Sinus</div>
+      <div id="rhythmBadge">Normal Sinus</div>
     </div>
   </div>
 </div>
 
-<!-- ══════════ 3D HEART PANEL ══════════ -->
+<!-- ══ 3D HEART PANEL ══ -->
 <div class="organ-panel" id="heartPanel">
   <div class="panel-header">🫀 3D Heart — Cardiac Cycle</div>
-  <div class="organ-canvas-wrap"><canvas id="heartCanvas" width="388" height="253" style="width: 259px; height: 169px;"></canvas></div>
-
+  <div class="organ-canvas-wrap"><canvas id="heartCanvas"></canvas></div>
   <div class="path-bar">
     <div class="path-title">Conduction Pathway</div>
     <div class="path-nodes">
@@ -565,34 +575,33 @@ button.active-btn{background:rgba(0,255,136,0.12);border-color:var(--accent);col
     </div>
   </div>
   <div class="node-grid">
-    <div class="node-cell" id="ch-ra"><span class="node-name">R.Atrium</span><span class="node-state" id="ch-ra-st" style="color: rgb(0, 255, 136);">Diastole</span></div>
-    <div class="node-cell" id="ch-la"><span class="node-name">L.Atrium</span><span class="node-state" id="ch-la-st" style="color: rgb(0, 255, 136);">Diastole</span></div>
-    <div class="node-cell" id="ch-rv"><span class="node-name">R.Ventricle</span><span class="node-state" id="ch-rv-st" style="color: rgb(0, 255, 136);">Diastole</span></div>
-    <div class="node-cell" id="ch-lv"><span class="node-name">L.Ventricle</span><span class="node-state" id="ch-lv-st" style="color: rgb(0, 255, 136);">Diastole</span></div>
+    <div class="node-cell" id="ch-ra"><span class="node-name">R.Atrium</span><span class="node-state" id="ch-ra-st">Diastole</span></div>
+    <div class="node-cell" id="ch-la"><span class="node-name">L.Atrium</span><span class="node-state" id="ch-la-st">Diastole</span></div>
+    <div class="node-cell" id="ch-rv"><span class="node-name">R.Ventricle</span><span class="node-state" id="ch-rv-st">Diastole</span></div>
+    <div class="node-cell" id="ch-lv"><span class="node-name">L.Ventricle</span><span class="node-state" id="ch-lv-st">Diastole</span></div>
   </div>
   <div class="organ-info">
-    <div class="phase-row"><span class="phase-lbl">P (Atrial)</span><div class="phase-bar-w"><div class="phase-bar-f" id="pb-p" style="width: 0%; background: rgb(255, 170, 0);"></div></div></div>
-    <div class="phase-row"><span class="phase-lbl">QRS (Ventr.)</span><div class="phase-bar-w"><div class="phase-bar-f" id="pb-qrs" style="width: 0%; background: rgb(255, 51, 68);"></div></div></div>
-    <div class="phase-row"><span class="phase-lbl">T (Repol.)</span><div class="phase-bar-w"><div class="phase-bar-f" id="pb-t" style="width: 0%; background: rgb(0, 170, 255);"></div></div></div>
+    <div class="phase-row"><span class="phase-lbl">P (Atrial)</span><div class="phase-bar-w"><div class="phase-bar-f" id="pb-p" style="background:#ffaa00"></div></div></div>
+    <div class="phase-row"><span class="phase-lbl">QRS (Ventr.)</span><div class="phase-bar-w"><div class="phase-bar-f" id="pb-qrs" style="background:#ff3344"></div></div></div>
+    <div class="phase-row"><span class="phase-lbl">T (Repol.)</span><div class="phase-bar-w"><div class="phase-bar-f" id="pb-t" style="background:#00aaff"></div></div></div>
   </div>
   <div class="freq-wrap">
     <div class="freq-title">Cardiac Freq Spectrum</div>
-    <canvas class="freq-canvas" id="heartFreqCanvas" width="243" height="40"></canvas>
+    <canvas class="freq-canvas" id="heartFreqCanvas"></canvas>
     <div class="freq-labels"><span>0</span><span>4Hz</span><span>8Hz</span><span>16Hz</span><span>32Hz</span></div>
   </div>
   <div class="organ-view-btns">
-    <button class="ovbtn active" onclick="setOrganView(&#39;heart&#39;,&#39;front&#39;,this)">Front</button>
-    <button class="ovbtn" onclick="setOrganView(&#39;heart&#39;,&#39;side&#39;,this)">Side</button>
-    <button class="ovbtn" onclick="setOrganView(&#39;heart&#39;,&#39;top&#39;,this)">Top</button>
-    <button class="ovbtn" onclick="setOrganView(&#39;heart&#39;,&#39;auto&#39;,this)">Auto</button>
+    <button class="ovbtn active" onclick="setOrganView('heart','front',this)">Front</button>
+    <button class="ovbtn" onclick="setOrganView('heart','side',this)">Side</button>
+    <button class="ovbtn" onclick="setOrganView('heart','top',this)">Top</button>
+    <button class="ovbtn" onclick="setOrganView('heart','auto',this)">Auto</button>
   </div>
 </div>
 
-<!-- ══════════ 3D BRAIN PANEL ══════════ -->
+<!-- ══ 3D BRAIN PANEL ══ -->
 <div class="organ-panel" id="brainPanel">
   <div class="panel-header">🧠 3D Brain — Neural Activity</div>
-  <div class="organ-canvas-wrap"><canvas id="brainCanvas" width="388" height="222" style="width: 259px; height: 148px;"></canvas></div>
-
+  <div class="organ-canvas-wrap"><canvas id="brainCanvas"></canvas></div>
   <div class="path-bar">
     <div class="path-title">Neural Pathway</div>
     <div class="path-nodes">
@@ -603,37 +612,37 @@ button.active-btn{background:rgba(0,255,136,0.12);border-color:var(--accent);col
     </div>
   </div>
   <div class="node-grid">
-    <div class="node-cell" id="bc-fl"><span class="node-name">Frontal L.</span><span class="node-state" id="bc-fl-st" style="color: var(--accent);">Rest</span></div>
-    <div class="node-cell" id="bc-pl"><span class="node-name">Parietal L.</span><span class="node-state" id="bc-pl-st" style="color: var(--accent);">Rest</span></div>
-    <div class="node-cell" id="bc-ol"><span class="node-name">Occipital L.</span><span class="node-state" id="bc-ol-st" style="color: var(--accent);">Rest</span></div>
-    <div class="node-cell active" id="bc-cb"><span class="node-name">Cerebellum</span><span class="node-state" id="bc-cb-st" style="color: rgb(170, 68, 255);">Active</span></div>
+    <div class="node-cell" id="bc-fl"><span class="node-name">Frontal L.</span><span class="node-state" id="bc-fl-st">Rest</span></div>
+    <div class="node-cell" id="bc-pl"><span class="node-name">Parietal L.</span><span class="node-state" id="bc-pl-st">Rest</span></div>
+    <div class="node-cell" id="bc-ol"><span class="node-name">Occipital L.</span><span class="node-state" id="bc-ol-st">Rest</span></div>
+    <div class="node-cell active" id="bc-cb"><span class="node-name">Cerebellum</span><span class="node-state" id="bc-cb-st" style="color:#aa44ff">Active</span></div>
   </div>
   <div class="organ-info">
-    <div class="phase-row"><span class="phase-lbl">Alpha (8-13Hz)</span><div class="phase-bar-w"><div class="phase-bar-f" id="pb-alpha" style="width: 70%; background: rgb(170, 68, 255);"></div></div></div>
-    <div class="phase-row"><span class="phase-lbl">Beta (13-30Hz)</span><div class="phase-bar-w"><div class="phase-bar-f" id="pb-beta" style="width: 45%; background: rgb(0, 170, 255);"></div></div></div>
-    <div class="phase-row"><span class="phase-lbl">Gamma (30+Hz)</span><div class="phase-bar-w"><div class="phase-bar-f" id="pb-gamma" style="width: 10%; background: rgb(255, 68, 170);"></div></div></div>
+    <div class="phase-row"><span class="phase-lbl">Alpha (8-13Hz)</span><div class="phase-bar-w"><div class="phase-bar-f" id="pb-alpha" style="width:70%;background:#aa44ff"></div></div></div>
+    <div class="phase-row"><span class="phase-lbl">Beta (13-30Hz)</span><div class="phase-bar-w"><div class="phase-bar-f" id="pb-beta" style="width:45%;background:#00aaff"></div></div></div>
+    <div class="phase-row"><span class="phase-lbl">Gamma (30+Hz)</span><div class="phase-bar-w"><div class="phase-bar-f" id="pb-gamma" style="width:10%;background:#ff44aa"></div></div></div>
   </div>
   <div class="freq-wrap">
     <div class="freq-title">EEG Frequency Spectrum</div>
-    <canvas class="freq-canvas" id="brainFreqCanvas" width="243" height="40"></canvas>
+    <canvas class="freq-canvas" id="brainFreqCanvas"></canvas>
     <div class="freq-labels"><span>0</span><span>10Hz</span><span>20Hz</span><span>40Hz</span><span>80Hz</span></div>
   </div>
   <div class="organ-view-btns">
-    <button class="ovbtn active" onclick="setOrganView(&#39;brain&#39;,&#39;front&#39;,this)">Front</button>
-    <button class="ovbtn" onclick="setOrganView(&#39;brain&#39;,&#39;side&#39;,this)">Side</button>
-    <button class="ovbtn" onclick="setOrganView(&#39;brain&#39;,&#39;top&#39;,this)">Top</button>
-    <button class="ovbtn" onclick="setOrganView(&#39;brain&#39;,&#39;auto&#39;,this)">Auto</button>
+    <button class="ovbtn active" onclick="setOrganView('brain','front',this)">Front</button>
+    <button class="ovbtn" onclick="setOrganView('brain','side',this)">Side</button>
+    <button class="ovbtn" onclick="setOrganView('brain','top',this)">Top</button>
+    <button class="ovbtn" onclick="setOrganView('brain','auto',this)">Auto</button>
   </div>
 </div>
 
-<!-- ══════════ RIGHT: SIGNAL CHAIN + VITALS ══════════ -->
+<!-- ══ RIGHT: VITALS + SIGNAL CHAIN ══ -->
 <div class="right-panel">
   <div class="panel-header">📊 Vitals Dashboard</div>
   <div class="vitals-grid">
     <div class="vital-card">
       <div class="vital-lbl">Heart Rate</div>
       <div><span class="vital-val" id="v-hr">72</span><span class="vital-unit"> bpm</span></div>
-      <div class="vital-bar"><div class="vital-bar-f" id="vb-hr" style="width: 22.6087%; background: rgb(255, 68, 85);"></div></div>
+      <div class="vital-bar"><div class="vital-bar-f" id="vb-hr" style="background:#ff4455"></div></div>
     </div>
     <div class="vital-card">
       <div class="vital-lbl">SpO₂</div>
@@ -643,32 +652,32 @@ button.active-btn{background:rgba(0,255,136,0.12);border-color:var(--accent);col
     <div class="vital-card">
       <div class="vital-lbl">Blood Pressure</div>
       <div><span class="vital-val" id="v-bp">114/74</span><span class="vital-unit"> mmHg</span></div>
-      <div class="vital-bar"><div class="vital-bar-f" id="vb-bp" style="width: 57%; background: rgb(255, 170, 0);"></div></div>
+      <div class="vital-bar"><div class="vital-bar-f" id="vb-bp" style="background:#ffaa00"></div></div>
     </div>
     <div class="vital-card">
       <div class="vital-lbl">Resp. Rate</div>
       <div><span class="vital-val" id="v-rr">16</span><span class="vital-unit"> /min</span></div>
-      <div class="vital-bar"><div class="vital-bar-f" id="vb-rr" style="width: 40%; background: rgb(0, 255, 136);"></div></div>
+      <div class="vital-bar"><div class="vital-bar-f" id="vb-rr" style="background:var(--accent)"></div></div>
     </div>
     <div class="vital-card">
       <div class="vital-lbl">Temperature</div>
       <div><span class="vital-val" id="v-temp">36.5</span><span class="vital-unit"> °C</span></div>
-      <div class="vital-bar"><div class="vital-bar-f" id="vb-temp" style="width: 25%; background: rgb(255, 102, 51);"></div></div>
+      <div class="vital-bar"><div class="vital-bar-f" id="vb-temp" style="background:#ff6633"></div></div>
     </div>
     <div class="vital-card">
       <div class="vital-lbl">EEG (Alpha)</div>
       <div><span class="vital-val" id="v-eeg">10.2</span><span class="vital-unit"> Hz</span></div>
-      <div class="vital-bar"><div class="vital-bar-f" id="vb-eeg" style="width: 25.5303%; background: rgb(170, 68, 255);"></div></div>
+      <div class="vital-bar"><div class="vital-bar-f" id="vb-eeg" style="background:#aa44ff"></div></div>
     </div>
     <div class="vital-card">
       <div class="vital-lbl">Lung Vol.</div>
       <div><span class="vital-val" id="v-lung">4.4</span><span class="vital-unit"> L</span></div>
-      <div class="vital-bar"><div class="vital-bar-f" id="vb-lung" style="width: 88%; background: rgb(68, 170, 255);"></div></div>
+      <div class="vital-bar"><div class="vital-bar-f" id="vb-lung" style="background:#44aaff"></div></div>
     </div>
     <div class="vital-card">
       <div class="vital-lbl">Kidney GFR</div>
       <div><span class="vital-val" id="v-gfr">87</span><span class="vital-unit"> mL/min</span></div>
-      <div class="vital-bar"><div class="vital-bar-f" id="vb-gfr" style="width: 72.5%; background: rgb(255, 170, 0);"></div></div>
+      <div class="vital-bar"><div class="vital-bar-f" id="vb-gfr" style="background:#ffaa00"></div></div>
     </div>
   </div>
 
@@ -683,8 +692,9 @@ button.active-btn{background:rgba(0,255,136,0.12);border-color:var(--accent);col
     <div class="param-row"><span class="param-lbl">Skin Z</span><span class="param-v" id="skinZ">5 kΩ</span></div>
     <div class="param-row"><span class="param-lbl">Gain</span><span class="param-v" id="ampGain">1000×</span></div>
     <div class="param-row"><span class="param-lbl">CMRR</span><span class="param-v" id="cmrrVal">84 dB</span></div>
-    <div class="mbar"><div class="mfill" id="signalMeter" style="width: 70%; background: rgb(0, 255, 136);"></div></div>
+    <div class="mbar"><div class="mfill" id="signalMeter" style="width:70%"></div></div>
   </div>
+
   <div class="chain-block">
     <div class="chain-title">② <span>Filters / DSP</span></div>
     <div class="stage-flow">
@@ -695,17 +705,17 @@ button.active-btn{background:rgba(0,255,136,0.12);border-color:var(--accent);col
     </div>
     <div class="param-row"><span class="param-lbl">SNR</span><span class="param-v" id="snrVal">40 dB</span></div>
     <div class="param-row"><span class="param-lbl">50Hz Atten.</span><span class="param-v" id="notchAtten">-45 dB</span></div>
-    <div class="param-row"><span class="param-lbl">Quality</span><span class="param-v" id="qualOut" style="color: rgb(0, 255, 136);">Excellent</span></div>
+    <div class="param-row"><span class="param-lbl">Quality</span><span class="param-v" id="qualOut" style="color:var(--accent)">Excellent</span></div>
   </div>
 
   <div class="osc-panel">
     <div class="osc-tabs">
-      <div class="osc-tab active" onclick="setOscMode(&#39;raw&#39;,this)">RAW</div>
-      <div class="osc-tab" onclick="setOscMode(&#39;afe&#39;,this)">AFE</div>
-      <div class="osc-tab" onclick="setOscMode(&#39;dsp&#39;,this)">DSP</div>
-      <div class="osc-tab" onclick="setOscMode(&#39;spec&#39;,this)">FFT</div>
+      <div class="osc-tab active" onclick="setOscMode('raw',this)">RAW</div>
+      <div class="osc-tab" onclick="setOscMode('afe',this)">AFE</div>
+      <div class="osc-tab" onclick="setOscMode('dsp',this)">DSP</div>
+      <div class="osc-tab" onclick="setOscMode('spec',this)">FFT</div>
     </div>
-    <canvas id="oscCanvas" width="230" height="65"></canvas>
+    <canvas id="oscCanvas"></canvas>
     <div class="osc-readout">
       <span class="osc-lbl">Vpp:</span><span class="osc-val" id="vppVal">2.04mV</span>
       <span class="osc-lbl">RMS:</span><span class="osc-val" id="rmsVal">0.25mV</span>
@@ -715,8 +725,8 @@ button.active-btn{background:rgba(0,255,136,0.12);border-color:var(--accent);col
 
   <div class="chain-block">
     <div class="chain-title">③ <span>Diagnostics</span></div>
-    <div class="diag-list" id="diagList"><div style="font-family:var(--font-mono);font-size:0.62em;color:var(--accent);padding:2px 0;">✓ All systems nominal</div></div>
-    <canvas id="specCanvas" style="width:100%;height:42px;background:#000;border:1px solid var(--border);border-radius:2px;display:block;margin-top:4px;" width="210" height="42"></canvas>
+    <div class="diag-list" id="diagList"></div>
+    <canvas id="specCanvas" style="width:100%;height:42px;background:#000;border:1px solid var(--border);border-radius:2px;display:block;margin-top:4px;"></canvas>
     <div class="osc-readout" style="border-top:none;padding:2px 0;">
       <span class="osc-lbl">50Hz:</span><span class="osc-val" id="hz50Val">-65 dB</span>
       <span class="osc-lbl">SNR:</span><span class="osc-val" id="snrOut">40 dB</span>
@@ -724,10 +734,8 @@ button.active-btn{background:rgba(0,255,136,0.12);border-color:var(--accent);col
   </div>
 </div>
 
-<!-- ══════════ BOTTOM CONTROLS ══════════ -->
+<!-- ══ BOTTOM CONTROLS ══ -->
 <div class="bottom-panel">
-
-  <!-- Cardiac Signal -->
   <div class="ctrl-section">
     <div class="ctrl-title">Cardiac Signal</div>
     <div class="ctrl-row">
@@ -757,16 +765,15 @@ button.active-btn{background:rgba(0,255,136,0.12);border-color:var(--accent);col
     </select>
   </div>
 
-  <!-- Fault Injection -->
   <div class="ctrl-section">
     <div class="ctrl-title">Fault Injection</div>
     <div class="btn-row">
-      <button class="danger" onclick="injectFault(&#39;powerline&#39;)">⚡ 50Hz</button>
-      <button class="danger" onclick="injectFault(&#39;motion&#39;)">〰 Motion</button>
-      <button class="danger" onclick="injectFault(&#39;rld&#39;)">✂ RLD</button>
-      <button class="danger" onclick="injectFault(&#39;lead&#39;)">📵 Lead Off</button>
-      <button class="danger" onclick="injectFault(&#39;saturation&#39;)">↑↑ Sat.</button>
-      <button class="danger" onclick="injectFault(&#39;baseline&#39;)">⌇ Drift</button>
+      <button class="danger" onclick="injectFault('powerline')">⚡ 50Hz</button>
+      <button class="danger" onclick="injectFault('motion')">〰 Motion</button>
+      <button class="danger" onclick="injectFault('rld')">✂ RLD</button>
+      <button class="danger" onclick="injectFault('lead')">📵 Lead Off</button>
+      <button class="danger" onclick="injectFault('saturation')">↑↑ Sat.</button>
+      <button class="danger" onclick="injectFault('baseline')">⌇ Drift</button>
       <button class="warn-btn" onclick="resetFaults()">↺ Clear All</button>
     </div>
     <div class="fault-list" id="faultList">
@@ -774,7 +781,6 @@ button.active-btn{background:rgba(0,255,136,0.12);border-color:var(--accent);col
     </div>
   </div>
 
-  <!-- Filters & DSP -->
   <div class="ctrl-section">
     <div class="ctrl-title">Filters &amp; DSP</div>
     <div class="ctrl-row">
@@ -793,12 +799,11 @@ button.active-btn{background:rgba(0,255,136,0.12);border-color:var(--accent);col
       <span class="ctrl-val" id="notchVal">1.0</span>
     </div>
     <div class="btn-row">
-      <button onclick="toggleFilter(&#39;muscle&#39;)" id="btnMuscle">Muscle</button>
-      <button onclick="toggleFilter(&#39;adaptive&#39;)" id="btnAdaptive">Adaptive NR</button>
+      <button onclick="toggleFilter('muscle')" id="btnMuscle">Muscle</button>
+      <button onclick="toggleFilter('adaptive')" id="btnAdaptive">Adaptive NR</button>
     </div>
   </div>
 
-  <!-- Neural / Brain -->
   <div class="ctrl-section">
     <div class="ctrl-title">Neural Controls</div>
     <div class="ctrl-row">
@@ -824,7 +829,6 @@ button.active-btn{background:rgba(0,255,136,0.12);border-color:var(--accent);col
     </div>
   </div>
 
-  <!-- Pre-amp & Calibration -->
   <div class="ctrl-section">
     <div class="ctrl-title">Pre-Amplifier</div>
     <div class="ctrl-row">
@@ -850,7 +854,6 @@ button.active-btn{background:rgba(0,255,136,0.12);border-color:var(--accent);col
     <div id="testResult" style="font-family:var(--font-mono);font-size:0.62em;margin-top:3px;"></div>
   </div>
 
-  <!-- Recording & Export -->
   <div class="ctrl-section">
     <div class="ctrl-title">Recording &amp; Tools</div>
     <div class="btn-row">
@@ -870,63 +873,46 @@ button.active-btn{background:rgba(0,255,136,0.12);border-color:var(--accent);col
     </div>
     <div id="recTimer" style="font-family:var(--font-mono);font-size:0.62em;color:var(--text-dim);">Ready</div>
   </div>
-
 </div>
+
 </div><!-- .root -->
 
 <script>
 // ═══════════════════════════════════════════════════════════════
-//  THEME ENGINE
+//  GLOBALS & STATE
 // ═══════════════════════════════════════════════════════════════
-window.setTheme = function(theme, el) {
-  document.body.className = theme === 'green' ? '' : 'theme-' + theme;
-  document.querySelectorAll('.theme-btn').forEach(b => b.classList.remove('active'));
-  el.classList.add('active');
-  // Update Three.js scene backgrounds
-  if(heartScene) heartScene.background = new THREE.Color(0x000000);
-  if(brainScene) brainScene.background = new THREE.Color(0x000000);
-  if(lungScene)  lungScene.background  = new THREE.Color(0x000000);
-};
-
-// ═══════════════════════════════════════════════════════════════
-//  ECG SIMULATION ENGINE
-// ═══════════════════════════════════════════════════════════════
-
 const LEADS = ['I','II','III','aVR','aVL','aVF','V1','V2','V3','V4','V5','V6'];
-const LEAD_FACTORS = {
-  I:1.0, II:1.2, III:0.6, aVR:-0.9, aVL:0.5, aVF:0.8,
-  V1:-0.5, V2:0.8, V3:1.1, V4:1.4, V5:1.2, V6:1.0
-};
+const LEAD_FACTORS = {I:1.0,II:1.2,III:0.6,aVR:-0.9,aVL:0.5,aVF:0.8,V1:-0.5,V2:0.8,V3:1.1,V4:1.4,V5:1.2,V6:1.0};
 const CORRECT_POS = {
-  RA:{x:0.28,y:0.22}, LA:{x:0.72,y:0.22},
-  RL:{x:0.28,y:0.82}, LL:{x:0.72,y:0.82},
-  V1:{x:0.52,y:0.40}, V2:{x:0.48,y:0.40},
-  V3:{x:0.44,y:0.46}, V4:{x:0.50,y:0.52},
-  V5:{x:0.57,y:0.52}, V6:{x:0.64,y:0.50}
+  RA:{x:0.28,y:0.22},LA:{x:0.72,y:0.22},
+  RL:{x:0.28,y:0.82},LL:{x:0.72,y:0.82},
+  V1:{x:0.52,y:0.40},V2:{x:0.48,y:0.40},
+  V3:{x:0.44,y:0.46},V4:{x:0.50,y:0.52},
+  V5:{x:0.57,y:0.52},V6:{x:0.64,y:0.50}
 };
 const ELEC_COLORS = {
-  RA:'#ff4466', LA:'#ffaa00', RL:'#00cc66', LL:'#00aaff',
-  V1:'#ff44aa', V2:'#aa44ff', V3:'#44aaff', V4:'#44ffaa', V5:'#ffff44', V6:'#ff8844'
+  RA:'#ff4466',LA:'#ffaa00',RL:'#00cc66',LL:'#00aaff',
+  V1:'#ff44aa',V2:'#aa44ff',V3:'#44aaff',V4:'#44ffaa',V5:'#ffff44',V6:'#ff8844'
 };
 const ELEC_NAMES = Object.keys(CORRECT_POS);
+const BUF_SIZE = 3000;
 
 const state = {
-  time:0, hr:72, amplitude:1.0, stShift:0, rhythm:'normal',
-  currentLead:'I', oscMode:'raw', gain:1000, skinImpedance:5,
-  noiseLevel:0.5, hpCutoff:0.05, lpCutoff:150, notchGain:1.0,
-  muscleFilter:false, adaptiveNR:false, faults:new Set(),
-  electrodes:{}, dragging:null,
-  bufRaw:[], bufAfe:[], bufDsp:[],
-  placementScore:0, lastBeat:0,
-  filters:{hpState:0, lpState:0},
-  // Neural state
-  brainState:'awake', neuralAmp:1.0, respRate:16,
-  // Recording
-  recording:false, recStart:0, recData:[],
-  // Speed/scale
-  paperSpeed:25, mmPerMV:10
+  time:0,hr:72,amplitude:1.0,stShift:0,rhythm:'normal',
+  currentLead:'I',oscMode:'raw',gain:1000,skinImpedance:5,
+  noiseLevel:0.5,hpCutoff:0.05,lpCutoff:150,notchGain:1.0,
+  muscleFilter:false,adaptiveNR:false,faults:new Set(),
+  electrodes:{},dragging:null,
+  bufRaw:[],bufAfe:[],bufDsp:[],
+  placementScore:0,lastBeat:0,
+  filters:{hpState:0,lpState:0},
+  brainState:'awake',neuralAmp:1.0,respRate:16,
+  recording:false,recStart:0,recData:[],
+  paperSpeed:25,mmPerMV:10,
+  ecgScrollOffset:0
 };
 
+// Init electrodes
 ELEC_NAMES.forEach(n => {
   state.electrodes[n] = {
     x: CORRECT_POS[n].x+(Math.random()-0.5)*0.07,
@@ -935,7 +921,22 @@ ELEC_NAMES.forEach(n => {
   };
 });
 
-// ── ECG Morphology ──
+// ═══════════════════════════════════════════════════════════════
+//  THEME
+// ═══════════════════════════════════════════════════════════════
+window.setTheme = function(theme, el) {
+  document.body.className = theme === 'green' ? '' : 'theme-'+theme;
+  document.querySelectorAll('.theme-btn').forEach(b => b.classList.remove('active'));
+  el.classList.add('active');
+};
+
+function getAccentColor() {
+  return getComputedStyle(document.body).getPropertyValue('--accent').trim() || '#00ff88';
+}
+
+// ═══════════════════════════════════════════════════════════════
+//  ECG MORPHOLOGY
+// ═══════════════════════════════════════════════════════════════
 function ecgMorphology(cycle, rhythm, amplitude, stShift, t) {
   let sig=0; const a=amplitude;
   switch(rhythm) {
@@ -1019,12 +1020,12 @@ function generateSample(t) {
 
 function applyFaults(raw, t) {
   let sig=raw;
-  if(state.faults.has('powerline')) { sig+=0.5*Math.sin(2*Math.PI*50*t/1000)+0.3*Math.sin(2*Math.PI*60*t/1000); }
-  if(state.faults.has('motion')) { sig+=0.8*Math.sin(t*0.0008)+0.3*(Math.random()-0.5)*Math.sin(t*0.002); }
-  if(state.faults.has('rld')) { sig+=1.5*Math.sin(2*Math.PI*50*t/1000); }
-  if(state.faults.has('lead')) { sig=(Math.random()-0.5)*4; }
-  if(state.faults.has('saturation')) { sig=Math.max(-2.5,Math.min(2.5,sig*3.5)); }
-  if(state.faults.has('baseline')) { sig+=0.8*Math.sin(t*0.00012)+0.3*Math.sin(t*0.00031); }
+  if(state.faults.has('powerline')) sig+=0.5*Math.sin(2*Math.PI*50*t/1000)+0.3*Math.sin(2*Math.PI*60*t/1000);
+  if(state.faults.has('motion')) sig+=0.8*Math.sin(t*0.0008)+0.3*(Math.random()-0.5)*Math.sin(t*0.002);
+  if(state.faults.has('rld')) sig+=1.5*Math.sin(2*Math.PI*50*t/1000);
+  if(state.faults.has('lead')) sig=(Math.random()-0.5)*4;
+  if(state.faults.has('saturation')) sig=Math.max(-2.5,Math.min(2.5,sig*3.5));
+  if(state.faults.has('baseline')) sig+=0.8*Math.sin(t*0.00012)+0.3*Math.sin(t*0.00031);
   sig+=(state.skinImpedance/100)*(Math.random()-0.5)*0.3;
   sig+=(state.noiseLevel/100)*(Math.random()-0.5)*0.15;
   return sig;
@@ -1050,102 +1051,129 @@ function applyDSP(afe) {
   return sig;
 }
 
-// ── CANVAS RENDERING ──
-let ecgCtx, oscCtx, specCtx, torsoCtx;
-const BUF_SIZE=3000;
-
-function ensureCanvases() {
-  const ids=['ecgCanvas','oscCanvas','specCanvas','torsoCanvas'];
-  ids.forEach(id=>{
-    const el=document.getElementById(id);
-    if(!el) return;
-    const r=el.getBoundingClientRect();
-    if(el.width!==(r.width|0)||el.height!==(r.height|0)){
-      el.width=r.width|0; el.height=r.height|0;
-    }
-  });
-  ecgCtx=document.getElementById('ecgCanvas').getContext('2d');
-  oscCtx=document.getElementById('oscCanvas').getContext('2d');
-  specCtx=document.getElementById('specCanvas').getContext('2d');
-  torsoCtx=document.getElementById('torsoCanvas').getContext('2d');
+// ═══════════════════════════════════════════════════════════════
+//  CANVAS SETUP — proper DPI-aware sizing
+// ═══════════════════════════════════════════════════════════════
+function setupCanvas(id) {
+  const cv = document.getElementById(id);
+  if(!cv) return null;
+  const parent = cv.parentElement;
+  const rect = parent.getBoundingClientRect();
+  const dpr = window.devicePixelRatio || 1;
+  const w = Math.floor(rect.width) || 300;
+  const h = Math.floor(rect.height) || 200;
+  cv.width = w * dpr;
+  cv.height = h * dpr;
+  cv.style.width = w + 'px';
+  cv.style.height = h + 'px';
+  const ctx = cv.getContext('2d');
+  ctx.scale(dpr, dpr);
+  return {cv, ctx, w, h, dpr};
 }
 
+let canvases = {};
+function initCanvases() {
+  ['ecgCanvas','oscCanvas','specCanvas','torsoCanvas'].forEach(id => {
+    canvases[id] = setupCanvas(id);
+  });
+}
+
+// ═══════════════════════════════════════════════════════════════
+//  ECG RENDER
+// ═══════════════════════════════════════════════════════════════
 function renderECG() {
-  const cv=document.getElementById('ecgCanvas');
-  const ctx=ecgCtx, w=cv.width, h=cv.height;
-  if(!ctx||w===0||h===0) return;
-  ctx.fillStyle='#000'; ctx.fillRect(0,0,w,h);
+  const c = canvases['ecgCanvas'];
+  if(!c) return;
+  const {ctx, w, h} = c;
+  ctx.fillStyle = '#000';
+  ctx.fillRect(0,0,w,h);
+
   // Grid
-  const gc=getComputedStyle(document.body).getPropertyValue('--grid-color').trim()||'rgba(80,20,20,0.5)';
-  ctx.strokeStyle=gc; ctx.lineWidth=0.5;
-  const mmPx=w/250;
+  const gc = getComputedStyle(document.body).getPropertyValue('--grid-color').trim() || 'rgba(80,20,20,0.5)';
+  const mmPx = w / 250;
+  ctx.strokeStyle = gc; ctx.lineWidth = 0.5;
   for(let x=0;x<=w;x+=mmPx*5){ctx.beginPath();ctx.moveTo(x,0);ctx.lineTo(x,h);ctx.stroke();}
   for(let y=0;y<=h;y+=mmPx*5){ctx.beginPath();ctx.moveTo(0,y);ctx.lineTo(w,y);ctx.stroke();}
-  ctx.lineWidth=0.8;
+  ctx.lineWidth = 0.8;
   for(let x=0;x<=w;x+=mmPx*25){ctx.beginPath();ctx.moveTo(x,0);ctx.lineTo(x,h);ctx.stroke();}
   for(let y=0;y<=h;y+=mmPx*25){ctx.beginPath();ctx.moveTo(0,y);ctx.lineTo(w,y);ctx.stroke();}
-  // Trace
-  const tc=state.faults.has('lead')?'#ff3344':getAccentColor();
-  ctx.strokeStyle=tc; ctx.lineWidth=1.8; ctx.shadowColor=tc; ctx.shadowBlur=4;
+
+  // Trace — scrolling sweep
+  const tc = state.faults.has('lead') ? '#ff3344' : getAccentColor();
+  ctx.strokeStyle = tc; ctx.lineWidth = 1.8;
+  ctx.shadowColor = tc; ctx.shadowBlur = 4;
   ctx.beginPath();
-  const samples=w;
-  for(let i=0;i<samples;i++){
-    const t=state.time-(samples-i)*(1000/250);
-    const raw=generateSample(t);
-    const faulted=applyFaults(raw,t);
-    const afe=applyAFE(faulted,t);
-    const dsp=applyDSP(afe);
-    state.bufRaw.push(faulted); state.bufAfe.push(afe); state.bufDsp.push(dsp);
-    if(state.bufRaw.length>BUF_SIZE){state.bufRaw.shift();state.bufAfe.shift();state.bufDsp.shift();}
-    const x=i, y=h/2-dsp*(h*0.2);
-    i===0?ctx.moveTo(x,y):ctx.lineTo(x,y);
+
+  const sampleRate = 250; // samples/sec
+  const msPerSample = 1000 / sampleRate;
+  const samplesNeeded = w;
+  const timeStep = (1000 / state.paperSpeed) * (w / sampleRate); // ms of signal per screen
+
+  for(let i = 0; i < samplesNeeded; i++) {
+    const t = state.time - (samplesNeeded - i) * msPerSample;
+    const raw = generateSample(t);
+    const faulted = applyFaults(raw, t);
+    const afe = applyAFE(faulted, t);
+    const dsp = applyDSP(afe);
+
+    state.bufRaw.push(faulted);
+    state.bufAfe.push(afe);
+    state.bufDsp.push(dsp);
+    if(state.bufRaw.length > BUF_SIZE){state.bufRaw.shift();state.bufAfe.shift();state.bufDsp.shift();}
+
+    const x = i;
+    const y = h/2 - dsp*(h*0.2);
+    i===0 ? ctx.moveTo(x,y) : ctx.lineTo(x,y);
   }
-  ctx.stroke(); ctx.shadowBlur=0;
+  ctx.stroke(); ctx.shadowBlur = 0;
+
   // Cal pulse
-  ctx.strokeStyle='rgba(200,200,200,0.25)'; ctx.lineWidth=1;
+  ctx.strokeStyle = 'rgba(200,200,200,0.25)'; ctx.lineWidth = 1;
   ctx.beginPath();ctx.moveTo(2,h*0.5);ctx.lineTo(2,h*0.5-h*0.2);ctx.lineTo(12,h*0.5-h*0.2);ctx.lineTo(12,h*0.5);ctx.stroke();
 }
 
-function getAccentColor(){
-  const styles=getComputedStyle(document.body);
-  return styles.getPropertyValue('--accent').trim()||'#00ff88';
-}
-
-function renderOscilloscope(){
-  const cv=document.getElementById('oscCanvas');
-  const ctx=oscCtx, w=cv.width, h=cv.height;
-  if(!ctx||w===0||h===0) return;
-  ctx.fillStyle='#000'; ctx.fillRect(0,0,w,h);
-  ctx.strokeStyle='rgba(0,80,40,0.3)'; ctx.lineWidth=0.5;
+// ═══════════════════════════════════════════════════════════════
+//  OSCILLOSCOPE
+// ═══════════════════════════════════════════════════════════════
+function renderOscilloscope() {
+  const c = canvases['oscCanvas'];
+  if(!c) return;
+  const {ctx, w, h} = c;
+  ctx.fillStyle = '#000'; ctx.fillRect(0,0,w,h);
+  ctx.strokeStyle = 'rgba(0,80,40,0.3)'; ctx.lineWidth = 0.5;
   for(let x=0;x<=w;x+=w/10){ctx.beginPath();ctx.moveTo(x,0);ctx.lineTo(x,h);ctx.stroke();}
   for(let y=0;y<=h;y+=h/8){ctx.beginPath();ctx.moveTo(0,y);ctx.lineTo(w,y);ctx.stroke();}
-  if(state.oscMode==='spec'){renderMiniSpec(ctx,w,h);return;}
-  let buf,color;
+
+  if(state.oscMode === 'spec'){renderMiniSpec(ctx,w,h);return;}
+
+  let buf, color;
   if(state.oscMode==='raw'){buf=state.bufRaw;color='#ff4466';}
   else if(state.oscMode==='afe'){buf=state.bufAfe;color='#ffaa00';}
   else{buf=state.bufDsp;color=getAccentColor();}
   if(buf.length<2) return;
-  const slice=buf.slice(-Math.min(600,buf.length));
-  ctx.strokeStyle=color; ctx.lineWidth=1.5; ctx.shadowColor=color; ctx.shadowBlur=3;
+
+  const slice = buf.slice(-Math.min(600,buf.length));
+  ctx.strokeStyle = color; ctx.lineWidth = 1.5; ctx.shadowColor = color; ctx.shadowBlur = 3;
   ctx.beginPath();
   for(let i=0;i<slice.length;i++){
-    const x=(i/slice.length)*w,y=h/2-slice[i]*(h*0.25);
+    const x=(i/slice.length)*w, y=h/2-slice[i]*(h*0.25);
     i?ctx.lineTo(x,y):ctx.moveTo(x,y);
   }
-  ctx.stroke(); ctx.shadowBlur=0;
-  const recent=slice.slice(-200);
-  if(recent.length>0){
-    const vpp=Math.max(...recent)-Math.min(...recent);
-    const dc=recent.reduce((a,b)=>a+b,0)/recent.length;
-    const rms=Math.sqrt(recent.map(v=>v*v).reduce((a,b)=>a+b,0)/recent.length);
-    document.getElementById('vppVal').textContent=vpp.toFixed(2)+'mV';
-    document.getElementById('dcVal').textContent=dc.toFixed(2)+'mV';
-    document.getElementById('rmsVal').textContent=rms.toFixed(2)+'mV';
+  ctx.stroke(); ctx.shadowBlur = 0;
+
+  const recent = slice.slice(-200);
+  if(recent.length > 0){
+    const vpp = Math.max(...recent)-Math.min(...recent);
+    const dc = recent.reduce((a,b)=>a+b,0)/recent.length;
+    const rms = Math.sqrt(recent.map(v=>v*v).reduce((a,b)=>a+b,0)/recent.length);
+    document.getElementById('vppVal').textContent = vpp.toFixed(2)+'mV';
+    document.getElementById('dcVal').textContent = dc.toFixed(2)+'mV';
+    document.getElementById('rmsVal').textContent = rms.toFixed(2)+'mV';
   }
 }
 
 function renderMiniSpec(ctx,w,h){
-  const data=state.bufDsp.slice(-512); if(data.length<4) return;
+  const data = state.bufDsp.slice(-512); if(data.length<4) return;
   const N=64, bw=w/N;
   for(let i=0;i<N;i++){
     let re=0,im=0;
@@ -1158,9 +1186,9 @@ function renderMiniSpec(ctx,w,h){
 }
 
 function renderSpectrumBottom(){
-  const cv=document.getElementById('specCanvas');
-  const ctx=specCtx,w=cv.width,h=cv.height;
-  if(!ctx||w===0||h===0) return;
+  const c = canvases['specCanvas'];
+  if(!c) return;
+  const {ctx,w,h} = c;
   ctx.fillStyle='#000'; ctx.fillRect(0,0,w,h);
   const data=state.bufDsp.slice(-512), N=48, bw=w/N;
   for(let i=0;i<N;i++){
@@ -1187,19 +1215,23 @@ function renderSpectrumBottom(){
   document.getElementById('qualOut').style.color=qc;
 }
 
-// ── TORSO ──
+// ═══════════════════════════════════════════════════════════════
+//  TORSO
+// ═══════════════════════════════════════════════════════════════
 function renderTorso(){
-  const cv=document.getElementById('torsoCanvas');
-  const ctx=torsoCtx, w=cv.width, h=cv.height;
-  if(!ctx||w===0||h===0) return;
+  const c = canvases['torsoCanvas'];
+  if(!c) return;
+  const {ctx,w,h} = c;
+  const ac = getAccentColor();
   ctx.fillStyle='#000'; ctx.fillRect(0,0,w,h);
-  const ac=getAccentColor();
+
   ctx.strokeStyle=`${ac}33`; ctx.lineWidth=1.5; ctx.fillStyle='rgba(0,20,10,0.8)';
   ctx.beginPath();
   ctx.moveTo(w*0.3,h*0.05); ctx.lineTo(w*0.7,h*0.05);
   ctx.lineTo(w*0.78,h*0.20); ctx.lineTo(w*0.75,h*0.88);
   ctx.lineTo(w*0.25,h*0.88); ctx.lineTo(w*0.22,h*0.20);
   ctx.closePath(); ctx.fill(); ctx.stroke();
+
   ctx.strokeStyle=`${ac}09`; ctx.lineWidth=0.8;
   for(let r=0;r<5;r++){
     const ry=h*0.18+r*h*0.10;
@@ -1207,17 +1239,18 @@ function renderTorso(){
   }
   ctx.strokeStyle=`${ac}12`; ctx.lineWidth=1;
   ctx.beginPath();ctx.moveTo(w*0.5,h*0.15);ctx.lineTo(w*0.5,h*0.65);ctx.stroke();
+
   const beatScale=1+0.05*Math.sin(state.time*2*Math.PI*state.hr/60000);
   ctx.save(); ctx.translate(w*0.47,h*0.38); ctx.scale(beatScale,beatScale);
   ctx.beginPath(); ctx.arc(0,0,w*0.07,0,Math.PI*2);
   ctx.fillStyle='rgba(180,0,0,0.3)'; ctx.fill();
   ctx.strokeStyle='rgba(220,0,50,0.4)'; ctx.lineWidth=1; ctx.stroke();
   ctx.restore();
-  // Lung hints
+
   ctx.fillStyle='rgba(0,80,150,0.12)';
   ctx.beginPath(); ctx.ellipse(w*0.35,h*0.38,w*0.10,h*0.20,0,0,Math.PI*2); ctx.fill();
   ctx.beginPath(); ctx.ellipse(w*0.65,h*0.38,w*0.10,h*0.20,0,0,Math.PI*2); ctx.fill();
-  // Lines to electrodes
+
   const hx=w*0.47, hy=h*0.38;
   Object.entries(state.electrodes).forEach(([name,elec])=>{
     const ex=elec.x*w, ey=elec.y*h;
@@ -1227,6 +1260,7 @@ function renderTorso(){
     ctx.beginPath(); ctx.moveTo(ex,ey); ctx.lineTo(hx,hy); ctx.stroke();
     ctx.setLineDash([]);
   });
+
   ELEC_NAMES.forEach(name=>{
     const elec=state.electrodes[name];
     const ex=elec.x*w, ey=elec.y*h;
@@ -1239,12 +1273,15 @@ function renderTorso(){
     ctx.beginPath(); ctx.arc(ex,ey,6,0,Math.PI*2);
     ctx.fillStyle=ok?color:color+'99'; ctx.fill();
     ctx.strokeStyle=ok?color:'#ff3344'; ctx.lineWidth=ok?1.5:2; ctx.stroke();
-    ctx.fillStyle='#fff'; ctx.font=`bold ${Math.max(7,w*0.030)}px Share Tech Mono`;
+    ctx.fillStyle='#fff';
+    const fontSize=Math.max(7,Math.min(w*0.030,11));
+    ctx.font=`bold ${fontSize}px Share Tech Mono`;
     ctx.textAlign='center'; ctx.textBaseline='middle'; ctx.fillText(name,ex,ey);
     const cp=CORRECT_POS[name];
     ctx.beginPath(); ctx.arc(cp.x*w,cp.y*h,8,0,Math.PI*2);
     ctx.strokeStyle=color+'28'; ctx.lineWidth=1; ctx.setLineDash([2,2]); ctx.stroke(); ctx.setLineDash([]);
   });
+
   const total=ELEC_NAMES.reduce((s,n)=>s+(isCorrect(n)?1:0),0);
   state.placementScore=(total/ELEC_NAMES.length*100)|0;
   const fill=document.getElementById('scoreFill');
@@ -1253,13 +1290,16 @@ function renderTorso(){
   fill.style.background=state.placementScore>80?getAccentColor():state.placementScore>50?'#ffaa00':'#ff3344';
   txt.textContent=state.placementScore+'%';
 }
+
 function isCorrect(name){
   const e=state.electrodes[name],cp=CORRECT_POS[name];
   const dx=e.x-cp.x,dy=e.y-cp.y;
   return Math.sqrt(dx*dx+dy*dy)<0.06;
 }
 
-// ── METRICS ──
+// ═══════════════════════════════════════════════════════════════
+//  METRICS UPDATE
+// ═══════════════════════════════════════════════════════════════
 function updateMetrics(){
   document.getElementById('hrReadout').textContent=state.hr;
   document.getElementById('rrReadout').textContent=(60000/state.hr|0);
@@ -1269,6 +1309,7 @@ function updateMetrics(){
   document.getElementById('qrsReadout').textContent=qrsDur;
   document.getElementById('qtReadout').textContent=(380-state.hr*1.2|0);
   document.getElementById('prReadout').textContent=state.rhythm==='block'?'—':160;
+
   const rhythmText={normal:'Normal Sinus',afib:'Atrial Fibrillation',vtach:'V-Tachycardia',
     stemi:'ST-Elevation MI',vfib:'V-Fibrillation',block:'3° AV Block',pac:'PAC',pvc:'PVC'};
   const badge=document.getElementById('rhythmBadge');
@@ -1278,45 +1319,46 @@ function updateMetrics(){
   badge.style.background=danger?'rgba(255,51,68,0.12)':'rgba(0,0,0,0.4)';
   badge.style.color=danger?'#ff3344':getAccentColor();
   document.getElementById('alertBanner').style.display=['vtach','vfib'].includes(state.rhythm)?'block':'none';
+
   const rr=60000/state.hr;
   if(state.time-state.lastBeat>rr*0.95){
     state.lastBeat=state.time;
     const flash=document.getElementById('beatFlash');
     flash.style.opacity='1'; setTimeout(()=>flash.style.opacity='0',60);
   }
-  // SpO2 — drops in vfib/vtach
+
   const spo2=state.rhythm==='vfib'?Math.floor(80+Math.random()*5):state.rhythm==='vtach'?Math.floor(90+Math.random()*5):98;
   document.getElementById('v-spo2').textContent=spo2;
   document.getElementById('vb-spo2').style.width=spo2+'%';
   document.getElementById('vb-spo2').style.background=spo2<90?'#ff3344':spo2<95?'#ffaa00':'#00aaff';
-  // BP
+
   const sys=100+state.hr*0.2+(state.stShift>0?state.stShift*10:0)|0;
   const dia=(sys*0.65)|0;
   document.getElementById('v-bp').textContent=sys+'/'+dia;
   document.getElementById('vb-bp').style.width=Math.min(100,(sys/200*100))+'%';
-  // Resp
+
   const rRate=state.respRate||16;
   document.getElementById('v-rr').textContent=rRate;
   document.getElementById('vb-rr').style.width=Math.min(100,rRate/40*100)+'%';
-  // Temperature
+
   const temp=(36.5+state.faults.size*0.2).toFixed(1);
   document.getElementById('v-temp').textContent=temp;
-  document.getElementById('vb-temp').style.width=Math.min(100,((temp-35)/6*100))+'%';
-  document.getElementById('vb-temp').style.background=temp>38.5?'#ff3344':temp>37.5?'#ffaa00':'#ff6633';
-  // Lung volume (breathing simulation)
+  document.getElementById('vb-temp').style.width=Math.min(100,((parseFloat(temp)-35)/6*100))+'%';
+  document.getElementById('vb-temp').style.background=parseFloat(temp)>38.5?'#ff3344':parseFloat(temp)>37.5?'#ffaa00':'#ff6633';
+
   const lv=(3.5+1.5*Math.sin(state.time*2*Math.PI*(rRate/60)/1000)).toFixed(1);
   document.getElementById('v-lung').textContent=lv;
-  document.getElementById('vb-lung').style.width=Math.min(100,(lv/5*100))+'%';
-  // GFR
+  document.getElementById('vb-lung').style.width=Math.min(100,(parseFloat(lv)/5*100))+'%';
+
   const gfr=90+Math.floor(Math.sin(state.time*0.0001)*5);
   document.getElementById('v-gfr').textContent=gfr;
   document.getElementById('vb-gfr').style.width=Math.min(100,(gfr/120*100))+'%';
   document.getElementById('vb-gfr').style.background=gfr<60?'#ff3344':gfr<90?'#ffaa00':'#44ffaa';
-  // EEG alpha
+
   const brainStateFreqs={awake:10.5,relax:9.8,sleep:7.2,deep:2.5,seiz:4.0,focus:20.0};
   const eegf=(brainStateFreqs[state.brainState]||10.0)+Math.sin(state.time*0.0003)*0.3;
   document.getElementById('v-eeg').textContent=Math.abs(eegf).toFixed(1);
-  document.getElementById('vb-eeg').style.width=Math.min(100,(eegf/40*100))+'%';
+  document.getElementById('vb-eeg').style.width=Math.min(100,(Math.abs(eegf)/40*100))+'%';
 }
 
 function updateImpedance(){
@@ -1340,7 +1382,7 @@ function updateDiagnostics(){
   else if(avgZ>15) items.push({text:'Elev. Impedance: '+avgZ.toFixed(0)+'Ω',cls:'active-warn'});
   state.faults.forEach(f=>{
     const labels={powerline:'50/60Hz Noise',motion:'Motion Artifact',rld:'RLD Failure',
-                  lead:'Lead Disconnection',saturation:'Saturation',baseline:'Baseline Drift'};
+      lead:'Lead Disconnection',saturation:'Saturation',baseline:'Baseline Drift'};
     items.push({text:labels[f]||f,cls:'active-fault'});
   });
   if(state.placementScore<60) items.push({text:'Poor Electrode Placement',cls:'active-warn'});
@@ -1379,9 +1421,12 @@ function updateStages(){
   mFill.style.background=lvl>85?'#ff3344':lvl>60?getAccentColor():'#ffaa00';
 }
 
-// ── EVENTS ──
+// ═══════════════════════════════════════════════════════════════
+//  UI BUILDERS
+// ═══════════════════════════════════════════════════════════════
 function buildLeadTabs(){
   const tabs=document.getElementById('leadTabs');
+  tabs.innerHTML='';
   LEADS.forEach(l=>{
     const tab=document.createElement('div');
     tab.className='lead-tab'+(l==='I'?' active':'');
@@ -1394,10 +1439,22 @@ function buildLeadTabs(){
   });
 }
 
+function buildLegend(){
+  const leg=document.getElementById('electrodeLegend');
+  leg.innerHTML='';
+  ELEC_NAMES.forEach(n=>{
+    const div=document.createElement('div'); div.className='elec-item';
+    div.innerHTML=`<div class="elec-dot" style="background:${ELEC_COLORS[n]}"></div>${n}`;
+    leg.appendChild(div);
+  });
+}
+
 function bindSliders(){
   const bind=(id,key,dId,fmt)=>{
     const el=document.getElementById(id); if(!el) return;
-    el.oninput=()=>{state[key]=+el.value;if(dId){const d=document.getElementById(dId);if(d)d.textContent=fmt?fmt(+el.value):el.value;}};
+    const update=()=>{state[key]=+el.value;if(dId){const d=document.getElementById(dId);if(d)d.textContent=fmt?fmt(+el.value):el.value;}};
+    el.addEventListener('input',update);
+    el.addEventListener('change',update);
   };
   bind('hrSlider','hr','hrSliderVal');
   bind('ampSlider','amplitude','ampSliderVal');
@@ -1416,8 +1473,12 @@ function bindSliders(){
   document.getElementById('brainStateSelect').onchange=e=>state.brainState=e.target.value;
 }
 
+// ═══════════════════════════════════════════════════════════════
+//  CONTROL FUNCTIONS
+// ═══════════════════════════════════════════════════════════════
 window.injectFault=function(type){state.faults.add(type);updateFaultList();};
 window.resetFaults=function(){state.faults.clear();updateFaultList();};
+
 function updateFaultList(){
   const list=document.getElementById('faultList');
   if(state.faults.size===0){
@@ -1434,7 +1495,8 @@ window.clearFault=function(f){state.faults.delete(f);updateFaultList();};
 window.toggleFilter=function(key){
   if(key==='muscle') state.muscleFilter=!state.muscleFilter;
   else if(key==='adaptive') state.adaptiveNR=!state.adaptiveNR;
-  document.getElementById('btn'+key.charAt(0).toUpperCase()+key.slice(1))?.classList.toggle('active-btn');
+  const btnId='btn'+key.charAt(0).toUpperCase()+key.slice(1);
+  document.getElementById(btnId)?.classList.toggle('active-btn');
 };
 window.setOscMode=function(mode,el){
   state.oscMode=mode;
@@ -1460,8 +1522,8 @@ window.resetAll=function(){
   Object.assign(state,{faults:new Set(),rhythm:'normal',hr:72,amplitude:1.0,stShift:0,
     gain:1000,skinImpedance:5,noiseLevel:0.5,hpCutoff:0.05,lpCutoff:150,notchGain:1.0,
     muscleFilter:false,adaptiveNR:false,brainState:'awake',neuralAmp:1.0,respRate:16});
-  const defaults={hrSlider:72,ampSlider:1.0,stSlider:0,gainSlider:1000,skinSlider:5,noiseSlider:0.5,
-    hpSlider:0.05,lpSlider:150,notchSlider:1.0,neuralAmpSlider:1.0,rrSlider:16};
+  const defaults={hrSlider:72,ampSlider:1.0,stSlider:0,gainSlider:1000,skinSlider:5,
+    noiseSlider:0.5,hpSlider:0.05,lpSlider:150,notchSlider:1.0,neuralAmpSlider:1.0,rrSlider:16};
   Object.entries(defaults).forEach(([id,v])=>{const el=document.getElementById(id);if(el)el.value=v;});
   document.getElementById('rhythmSelect').value='normal';
   document.getElementById('brainStateSelect').value='awake';
@@ -1477,12 +1539,13 @@ window.resetAll=function(){
   });
 };
 
-// ── RECORDING ──
+// ═══════════════════════════════════════════════════════════════
+//  RECORDING
+// ═══════════════════════════════════════════════════════════════
 let recInterval=null;
 window.toggleRecord=function(){
   state.recording=!state.recording;
   const btn=document.getElementById('btnRecord');
-  const hdr=document.querySelector('.header-right');
   if(state.recording){
     state.recStart=state.time; state.recData=[];
     btn.textContent='⏹ Stop'; btn.style.borderColor='#ff3344'; btn.style.color='#ff3344';
@@ -1499,62 +1562,89 @@ window.toggleRecord=function(){
   }
 };
 window.exportData=function(){
+  if(state.recData.length===0){alert('No recording data. Please record first.');return;}
   const csv=['time_ms,ecg_raw,ecg_dsp,hr,rhythm',...state.recData.map(d=>d.join(','))].join('\n');
   const a=document.createElement('a');
   a.href='data:text/csv;charset=utf-8,'+encodeURIComponent(csv);
-  a.download='ecg_recording_'+Date.now()+'.csv'; a.click();
+  a.download='ecg_recording_'+Date.now()+'.csv'; document.body.appendChild(a); a.click(); document.body.removeChild(a);
 };
 window.printReport=function(){window.print();};
 
-// ── TORSO DRAG ──
+// ═══════════════════════════════════════════════════════════════
+//  TORSO DRAG — Mouse + Touch
+// ═══════════════════════════════════════════════════════════════
 function initTorsoDrag(){
   const cv=document.getElementById('torsoCanvas');
+
   function getPos(e){
     const r=cv.getBoundingClientRect();
-    const cx=e.touches?e.touches[0].clientX:e.clientX;
-    const cy=e.touches?e.touches[0].clientY:e.clientY;
-    return{x:(cx-r.left)/r.width,y:(cy-r.top)/r.height};
+    let cx,cy;
+    if(e.touches && e.touches.length>0){
+      cx=e.touches[0].clientX; cy=e.touches[0].clientY;
+    } else {
+      cx=e.clientX; cy=e.clientY;
+    }
+    return{x:(cx-r.left)/r.width, y:(cy-r.top)/r.height};
   }
+
   function findElec(px,py){
     let best=null,bestD=99;
-    ELEC_NAMES.forEach(n=>{const e=state.electrodes[n];const d=Math.sqrt((e.x-px)**2+(e.y-py)**2);if(d<0.08&&d<bestD){bestD=d;best=n;}});
+    ELEC_NAMES.forEach(n=>{
+      const e=state.electrodes[n];
+      const d=Math.sqrt((e.x-px)**2+(e.y-py)**2);
+      if(d<0.1&&d<bestD){bestD=d;best=n;}
+    });
     return best;
   }
-  cv.addEventListener('mousedown',e=>{const p=getPos(e);state.dragging=findElec(p.x,p.y);});
-  cv.addEventListener('mousemove',e=>{
+
+  function onStart(e){
+    const p=getPos(e);
+    state.dragging=findElec(p.x,p.y);
+    if(state.dragging) e.preventDefault();
+  }
+  function onMove(e){
     if(!state.dragging)return;
+    e.preventDefault();
     const p=getPos(e);
     state.electrodes[state.dragging].x=Math.max(0.05,Math.min(0.95,p.x));
     state.electrodes[state.dragging].y=Math.max(0.05,Math.min(0.95,p.y));
     const cp=CORRECT_POS[state.dragging];
     const d=Math.sqrt((state.electrodes[state.dragging].x-cp.x)**2+(state.electrodes[state.dragging].y-cp.y)**2);
     state.electrodes[state.dragging].impedance=5+d*80+Math.random()*2;
-    e.preventDefault();
-  });
-  cv.addEventListener('mouseup',()=>state.dragging=null);
-  cv.addEventListener('mouseleave',()=>state.dragging=null);
+  }
+  function onEnd(){state.dragging=null;}
+
+  // Mouse events
+  cv.addEventListener('mousedown',onStart);
   cv.addEventListener('mousemove',e=>{
-    if(state.dragging)return;
-    const p=getPos(e), n=findElec(p.x,p.y);
-    const tip=document.getElementById('tooltip');
-    if(n){
-      const el=state.electrodes[n],ok=isCorrect(n);
-      tip.style.display='block';tip.style.left=(e.clientX+14)+'px';tip.style.top=(e.clientY-10)+'px';
-      tip.innerHTML=`<b>${n}</b><br>Z: ${el.impedance.toFixed(1)} Ω<br>${ok?'✓ Correct':'✗ Misplaced'}`;
-    } else tip.style.display='none';
+    onMove(e);
+    if(!state.dragging){
+      const p=getPos(e), n=findElec(p.x,p.y);
+      const tip=document.getElementById('tooltip');
+      if(n){
+        const el=state.electrodes[n],ok=isCorrect(n);
+        tip.style.display='block';
+        tip.style.left=(e.clientX+14)+'px';
+        tip.style.top=(e.clientY-10)+'px';
+        tip.innerHTML=`<b>${n}</b><br>Z: ${el.impedance.toFixed(1)} Ω<br>${ok?'✓ Correct':'✗ Misplaced'}`;
+      } else {
+        tip.style.display='none';
+      }
+    }
   });
+  cv.addEventListener('mouseup',onEnd);
+  cv.addEventListener('mouseleave',()=>{state.dragging=null;document.getElementById('tooltip').style.display='none';});
+
+  // Touch events
+  cv.addEventListener('touchstart',onStart,{passive:false});
+  cv.addEventListener('touchmove',onMove,{passive:false});
+  cv.addEventListener('touchend',onEnd);
+  cv.addEventListener('touchcancel',onEnd);
 }
 
-function buildLegend(){
-  const leg=document.getElementById('electrodeLegend');
-  ELEC_NAMES.forEach(n=>{
-    const div=document.createElement('div'); div.className='elec-item';
-    div.innerHTML=`<div class="elec-dot" style="background:${ELEC_COLORS[n]}"></div>${n}`;
-    leg.appendChild(div);
-  });
-}
-
-// ── CLOCK & FPS ──
+// ═══════════════════════════════════════════════════════════════
+//  CLOCK & FPS
+// ═══════════════════════════════════════════════════════════════
 let lastFrameTime=0, frameCount=0, fps=60;
 function updateClock(){
   const now=new Date(), pad=n=>String(n).padStart(2,'0');
@@ -1579,7 +1669,7 @@ function getCardiacPhase(){
 }
 
 // ═══════════════════════════════════════════════════════════════
-//  3D HEART ENGINE
+//  3D HEART
 // ═══════════════════════════════════════════════════════════════
 let heartScene,heartCamera,heartRenderer,heartAutoAngle=0,heartViewMode='auto';
 let heartMeshes={},heartLights={};
@@ -1587,81 +1677,82 @@ let heartFreqCtx,heartFreqCanvas;
 
 function initHeart3D(){
   const cv=document.getElementById('heartCanvas');
-  heartScene=new THREE.Scene(); heartScene.background=new THREE.Color(0x000000);
+  if(!cv||typeof THREE==='undefined') return;
+
+  const parent=cv.parentElement;
+  const w=parent.offsetWidth||260, h=parent.offsetHeight||180;
+  cv.width=w; cv.height=h;
+
+  heartScene=new THREE.Scene();
+  heartScene.background=new THREE.Color(0x000000);
   heartScene.fog=new THREE.FogExp2(0x000000,0.055);
-  const w=cv.offsetWidth||260, h=cv.offsetHeight||200;
+
   heartCamera=new THREE.PerspectiveCamera(50,w/h,0.1,200);
   heartCamera.position.set(0,0,9);
-  heartRenderer=new THREE.WebGLRenderer({canvas:cv,antialias:true,alpha:false});
-  heartRenderer.setSize(w,h);
-  heartRenderer.shadowMap.enabled=true;
-  heartRenderer.setPixelRatio(Math.min(window.devicePixelRatio,2));
+
+  try{
+    heartRenderer=new THREE.WebGLRenderer({canvas:cv,antialias:true,alpha:false});
+    heartRenderer.setSize(w,h);
+    heartRenderer.shadowMap.enabled=true;
+    heartRenderer.setPixelRatio(Math.min(window.devicePixelRatio,2));
+  }catch(e){console.warn('WebGL init failed:',e);return;}
+
   const ambient=new THREE.AmbientLight(0x111111,1.0); heartScene.add(ambient);
-  const keyLight=new THREE.DirectionalLight(0xffffff,1.2); keyLight.position.set(5,8,6); keyLight.castShadow=true; heartScene.add(keyLight); heartLights.key=keyLight;
+  const keyLight=new THREE.DirectionalLight(0xffffff,1.2); keyLight.position.set(5,8,6); keyLight.castShadow=true; heartScene.add(keyLight);
   const fillLight=new THREE.DirectionalLight(0x334455,0.6); fillLight.position.set(-5,-3,-4); heartScene.add(fillLight);
-  const glowColors={ra:0xffaa00,la:0xffaa00,rv:0xff3344,lv:0xff1122};
-  Object.entries(glowColors).forEach(([k,c])=>{const pl=new THREE.PointLight(c,0,3);heartScene.add(pl);heartLights[k]=pl;});
-  heartLights.conduction=new THREE.PointLight(0xffff00,0,2); heartScene.add(heartLights.conduction);
+
   buildHeartMeshes();
   heartFreqCanvas=document.getElementById('heartFreqCanvas');
   heartFreqCtx=heartFreqCanvas.getContext('2d');
-  (function render3D(){requestAnimationFrame(render3D);heartRenderer.render(heartScene,heartCamera);})();
+
+  (function r3d(){requestAnimationFrame(r3d);if(heartRenderer)heartRenderer.render(heartScene,heartCamera);})();
 }
 
 function buildHeartMeshes(){
   const group=new THREE.Group(); heartScene.add(group); heartMeshes.group=group;
-  // Pericardium
   const periMat=new THREE.MeshPhongMaterial({color:0x3d1a22,transparent:true,opacity:0.18,side:THREE.FrontSide,shininess:40});
-  const periGeo=new THREE.SphereGeometry(3.6,32,24); const peri=new THREE.Mesh(periGeo,periMat); group.add(peri); heartMeshes.pericardium=peri;
-  // Outer myocardium
+  const peri=new THREE.Mesh(new THREE.SphereGeometry(3.6,32,24),periMat); group.add(peri); heartMeshes.pericardium=peri;
   const outerMat=new THREE.MeshPhongMaterial({color:0x8b1a2a,emissive:0x060000,shininess:80,specular:0x442222});
-  const outerGeo=new THREE.SphereGeometry(3.0,32,24); const outer=new THREE.Mesh(outerGeo,outerMat); group.add(outer); heartMeshes.outer=outer;
-  // Right Atrium
+  const outer=new THREE.Mesh(new THREE.SphereGeometry(3.0,32,24),outerMat); group.add(outer); heartMeshes.outer=outer;
   const raMat=new THREE.MeshPhongMaterial({color:0x8b3a15,emissive:0x0d0500,shininess:60});
-  const raGeo=new THREE.SphereGeometry(1.2,20,14); const ra=new THREE.Mesh(raGeo,raMat); ra.position.set(1.3,0.8,0); group.add(ra); heartMeshes.ra=ra;
-  // Left Atrium
+  const ra=new THREE.Mesh(new THREE.SphereGeometry(1.2,20,14),raMat); ra.position.set(1.3,0.8,0); group.add(ra); heartMeshes.ra=ra;
   const laMat=new THREE.MeshPhongMaterial({color:0x7b2a10,emissive:0x100000,shininess:60});
-  const laGeo=new THREE.SphereGeometry(1.3,20,14); const la=new THREE.Mesh(laGeo,laMat); la.position.set(-1.2,0.9,0); group.add(la); heartMeshes.la=la;
-  // Right Ventricle
+  const la=new THREE.Mesh(new THREE.SphereGeometry(1.3,20,14),laMat); la.position.set(-1.2,0.9,0); group.add(la); heartMeshes.la=la;
   const rvMat=new THREE.MeshPhongMaterial({color:0x9b2a22,emissive:0x0d0500,shininess:70});
-  const rvGeo=new THREE.SphereGeometry(1.6,20,14); const rv=new THREE.Mesh(rvGeo,rvMat); rv.position.set(1.1,-1.0,0.2); group.add(rv); heartMeshes.rv=rv;
-  // Left Ventricle
+  const rv=new THREE.Mesh(new THREE.SphereGeometry(1.6,20,14),rvMat); rv.position.set(1.1,-1.0,0.2); group.add(rv); heartMeshes.rv=rv;
   const lvMat=new THREE.MeshPhongMaterial({color:0xaa1122,emissive:0x1a0000,shininess:80,specular:0x661122});
-  const lvGeo=new THREE.SphereGeometry(1.8,24,16); const lv=new THREE.Mesh(lvGeo,lvMat); lv.position.set(-1.0,-0.9,0.2); group.add(lv); heartMeshes.lv=lv;
-  // Apex
+  const lv=new THREE.Mesh(new THREE.SphereGeometry(1.8,24,16),lvMat); lv.position.set(-1.0,-0.9,0.2); group.add(lv); heartMeshes.lv=lv;
   const apexMat=new THREE.MeshPhongMaterial({color:0x881122,emissive:0x060000,shininess:60});
-  const apexGeo=new THREE.ConeGeometry(0.8,1.8,16); const apex=new THREE.Mesh(apexGeo,apexMat); apex.position.set(-0.2,-2.5,0); apex.rotation.z=0.2; group.add(apex); heartMeshes.apex=apex;
-  // SA Node
-  const saMat=new THREE.MeshPhongMaterial({color:0x888800,emissive:0x111100}); const sn=new THREE.Mesh(new THREE.SphereGeometry(0.2,12,8),saMat); sn.position.set(1.5,1.4,0.4); group.add(sn); heartMeshes.saNode=sn;
-  // AV Node
-  const avMat=new THREE.MeshPhongMaterial({color:0x553300,emissive:0x110500}); const av=new THREE.Mesh(new THREE.SphereGeometry(0.18,12,8),avMat); av.position.set(0.3,-0.3,0.1); group.add(av); heartMeshes.avNode=av;
-  // His Bundle
-  const hisMat=new THREE.MeshPhongMaterial({color:0x444400,emissive:0x080800}); const his=new THREE.Mesh(new THREE.CylinderGeometry(0.05,0.05,1.0,8),hisMat); his.position.set(0,-0.8,0); group.add(his); heartMeshes.his=his;
-  // Coronary arteries
-  const ladMat=new THREE.MeshPhongMaterial({color:0xcc2200,emissive:0x0d0000}); const ladGeo=new THREE.TorusGeometry(1.5,0.06,8,40,Math.PI*0.8); const lad=new THREE.Mesh(ladGeo,ladMat); lad.rotation.x=Math.PI/2; lad.position.set(-0.5,-0.5,0.5); group.add(lad); heartMeshes.lad=lad;
-  const rcaMat=new THREE.MeshPhongMaterial({color:0xaa1800,emissive:0x090000}); const rcaGeo=new THREE.TorusGeometry(1.3,0.05,8,35,Math.PI*0.7); const rca=new THREE.Mesh(rcaGeo,rcaMat); rca.rotation.x=Math.PI/2; rca.position.set(0.8,-0.3,0.3); group.add(rca); heartMeshes.rca=rca;
+  const apex=new THREE.Mesh(new THREE.ConeGeometry(0.8,1.8,16),apexMat); apex.position.set(-0.2,-2.5,0); apex.rotation.z=0.2; group.add(apex); heartMeshes.apex=apex;
+  const sn=new THREE.Mesh(new THREE.SphereGeometry(0.2,12,8),new THREE.MeshPhongMaterial({color:0x888800,emissive:0x111100})); sn.position.set(1.5,1.4,0.4); group.add(sn); heartMeshes.saNode=sn;
+  const av=new THREE.Mesh(new THREE.SphereGeometry(0.18,12,8),new THREE.MeshPhongMaterial({color:0x553300,emissive:0x110500})); av.position.set(0.3,-0.3,0.1); group.add(av); heartMeshes.avNode=av;
+  const his=new THREE.Mesh(new THREE.CylinderGeometry(0.05,0.05,1.0,8),new THREE.MeshPhongMaterial({color:0x444400,emissive:0x080800})); his.position.set(0,-0.8,0); group.add(his); heartMeshes.his=his;
+  const lad=new THREE.Mesh(new THREE.TorusGeometry(1.5,0.06,8,40,Math.PI*0.8),new THREE.MeshPhongMaterial({color:0xcc2200,emissive:0x0d0000})); lad.rotation.x=Math.PI/2; lad.position.set(-0.5,-0.5,0.5); group.add(lad); heartMeshes.lad=lad;
+  const rca=new THREE.Mesh(new THREE.TorusGeometry(1.3,0.05,8,35,Math.PI*0.7),new THREE.MeshPhongMaterial({color:0xaa1800,emissive:0x090000})); rca.rotation.x=Math.PI/2; rca.position.set(0.8,-0.3,0.3); group.add(rca); heartMeshes.rca=rca;
   group.rotation.z=-0.15; group.rotation.x=0.1;
 
-  // Glow lights placement
-  heartLights.ra=new THREE.PointLight(0xffaa00,0,3); heartLights.ra.position.copy(ra.position); heartScene.add(heartLights.ra);
-  heartLights.la=new THREE.PointLight(0xffaa00,0,3); heartLights.la.position.copy(la.position); heartScene.add(heartLights.la);
-  heartLights.rv=new THREE.PointLight(0xff3344,0,4); heartLights.rv.position.copy(rv.position); heartScene.add(heartLights.rv);
-  heartLights.lv=new THREE.PointLight(0xff1122,0,4); heartLights.lv.position.copy(lv.position); heartScene.add(heartLights.lv);
+  ['ra','la','rv','lv'].forEach(k=>{
+    const colors={ra:0xffaa00,la:0xffaa00,rv:0xff3344,lv:0xff1122};
+    const pl=new THREE.PointLight(colors[k],0,3); pl.position.copy(heartMeshes[k].position); heartScene.add(pl); heartLights[k]=pl;
+  });
+  heartLights.conduction=new THREE.PointLight(0xffff00,0,2); heartScene.add(heartLights.conduction);
 }
 
 function updateHeart3D(){
-  if(!heartScene) return;
+  if(!heartScene||!heartMeshes.group) return;
   const ph=getCardiacPhase();
   const{pFrac,qrsFrac,tFrac,pActive,qrsActive,cycle}=ph;
   const atrialContract=pFrac, ventriContract=qrsFrac;
-  const raScale=1.0-atrialContract*0.18, laScale=1.0-atrialContract*0.16;
-  heartMeshes.ra.scale.setScalar(raScale); heartMeshes.la.scale.setScalar(laScale);
+
+  heartMeshes.ra.scale.setScalar(1.0-atrialContract*0.18);
+  heartMeshes.la.scale.setScalar(1.0-atrialContract*0.16);
   const diasFill=tFrac*0.06+(1-ventriContract)*0.04;
-  const lvScale=1.0+diasFill-ventriContract*0.18, rvScale=1.0+diasFill*0.8-ventriContract*0.15;
-  heartMeshes.lv.scale.setScalar(Math.max(0.75,lvScale)); heartMeshes.rv.scale.setScalar(Math.max(0.78,rvScale));
+  heartMeshes.lv.scale.setScalar(Math.max(0.75,1.0+diasFill-ventriContract*0.18));
+  heartMeshes.rv.scale.setScalar(Math.max(0.78,1.0+diasFill*0.8-ventriContract*0.15));
   heartMeshes.apex.scale.setScalar(1.0-ventriContract*0.12+diasFill*0.5);
   const beatPulse=pFrac*0.04+qrsFrac*0.07;
-  heartMeshes.outer.scale.setScalar(1.0+beatPulse); heartMeshes.pericardium.scale.setScalar(1.0+beatPulse*0.5);
+  heartMeshes.outer.scale.setScalar(1.0+beatPulse);
+  heartMeshes.pericardium.scale.setScalar(1.0+beatPulse*0.5);
   heartMeshes.lv.material.emissive.copy(new THREE.Color(0x1a0000).lerp(new THREE.Color(0xff1122),ventriContract*0.8));
   heartMeshes.rv.material.emissive.copy(new THREE.Color(0x0d0500).lerp(new THREE.Color(0xff4400),ventriContract*0.7));
   heartMeshes.la.material.emissive.copy(new THREE.Color(0x100000).lerp(new THREE.Color(0xffaa00),atrialContract*0.8));
@@ -1670,15 +1761,16 @@ function updateHeart3D(){
   heartLights.lv.intensity=ventriContract*2.5; heartLights.rv.intensity=ventriContract*1.8;
   heartLights.la.intensity=atrialContract*1.5; heartLights.ra.intensity=atrialContract*1.2;
   const saActive=cycle>=0.00&&cycle<0.06, avActive=cycle>=0.10&&cycle<0.20;
-  const hisActive=cycle>=0.17&&cycle<0.24, pkActive=cycle>=0.20&&cycle<0.28;
+  const hisActive=cycle>=0.17&&cycle<0.24;
   heartMeshes.saNode.material.emissive.setHex(saActive?0x888800:0x111100);
   heartMeshes.avNode.material.emissive.setHex(avActive?0x553300:0x110500);
   heartMeshes.his.material.emissive.setHex(hisActive?0x444400:0x080800);
-  heartLights.conduction.intensity=hisActive?1.5:pkActive?1.0:saActive?0.8:0;
+  heartLights.conduction.intensity=hisActive?1.5:0;
   heartLights.conduction.position.copy(heartMeshes.his.position);
   const cadPulse=0.7+ventriContract*0.6+tFrac*0.3;
   heartMeshes.lad.material.color.setRGB(cadPulse,0.1+ventriContract*0.2,0.05);
   heartMeshes.rca.material.color.setRGB(cadPulse*0.9,0.08,0.04);
+
   if(heartViewMode==='auto'){
     heartAutoAngle+=0.004;
     heartCamera.position.x=Math.sin(heartAutoAngle)*9;
@@ -1717,21 +1809,20 @@ function updateHeartUI(ph){
 
 function updateHeartFreqCanvas(){
   const cv=heartFreqCanvas; if(!cv||!heartFreqCtx) return;
-  const ctx=heartFreqCtx, rect=cv.getBoundingClientRect();
-  if(cv.width!==rect.width|0){cv.width=rect.width|0;cv.height=rect.height|0;}
-  const w=cv.width,h=cv.height; if(w===0||h===0) return;
+  const rect=cv.getBoundingClientRect();
+  const w=rect.width|0||cv.offsetWidth|0||243, h=rect.height|0||cv.offsetHeight|0||40;
+  if(cv.width!==w||cv.height!==h){cv.width=w;cv.height=h;}
+  if(w===0||h===0) return;
+  const ctx=heartFreqCtx;
   ctx.fillStyle='#000'; ctx.fillRect(0,0,w,h);
   const hrHz=state.hr/60, maxFreq=32, N=w;
   for(let i=0;i<N;i++){
     const freq=(i/N)*maxFreq;
     let mag=0.02+0.015*Math.random();
     mag+=0.15*Math.exp(-Math.pow((freq-0.25)/0.08,2));
-    mag+=0.10*Math.exp(-Math.pow((freq-0.09)/0.04,2));
     mag+=state.amplitude*0.9*Math.exp(-Math.pow((freq-hrHz)/0.05,2));
     for(let h2=2;h2<=6;h2++) mag+=state.amplitude*(0.5/h2)*Math.exp(-Math.pow((freq-hrHz*h2)/0.08,2));
     mag+=0.25*Math.exp(-Math.pow((freq-5.0)/1.5,2));
-    mag+=0.6*Math.exp(-Math.pow((freq-15)/6,2));
-    mag+=0.3*Math.exp(-Math.pow((freq-2.5)/1.2,2));
     if(state.faults.has('powerline')||state.faults.has('rld')) mag+=2.0*Math.exp(-Math.pow((freq-50)/0.5,2));
     if(state.faults.has('motion')) mag+=0.8*Math.exp(-Math.pow((freq-0.8)/0.3,2));
     if(state.muscleFilter) mag*=(1-0.5*freq/maxFreq);
@@ -1746,7 +1837,7 @@ function updateHeartFreqCanvas(){
 }
 
 // ═══════════════════════════════════════════════════════════════
-//  3D BRAIN ENGINE
+//  3D BRAIN
 // ═══════════════════════════════════════════════════════════════
 let brainScene,brainCamera,brainRenderer,brainAutoAngle=0,brainViewMode='auto';
 let brainMeshes={},brainLights={};
@@ -1754,32 +1845,43 @@ let brainFreqCtx,brainFreqCanvas;
 
 function initBrain3D(){
   const cv=document.getElementById('brainCanvas');
-  brainScene=new THREE.Scene(); brainScene.background=new THREE.Color(0x000000);
+  if(!cv||typeof THREE==='undefined') return;
+
+  const parent=cv.parentElement;
+  const w=parent.offsetWidth||260, h=parent.offsetHeight||180;
+  cv.width=w; cv.height=h;
+
+  brainScene=new THREE.Scene();
+  brainScene.background=new THREE.Color(0x000000);
   brainScene.fog=new THREE.FogExp2(0x000000,0.05);
-  const w=cv.offsetWidth||260, h=cv.offsetHeight||200;
+
   brainCamera=new THREE.PerspectiveCamera(50,w/h,0.1,200);
   brainCamera.position.set(0,0,10);
-  brainRenderer=new THREE.WebGLRenderer({canvas:cv,antialias:true,alpha:false});
-  brainRenderer.setSize(w,h); brainRenderer.setPixelRatio(Math.min(window.devicePixelRatio,2));
-  const ambient=new THREE.AmbientLight(0x222233,1.2); brainScene.add(ambient);
-  const keyLight=new THREE.DirectionalLight(0xaabbff,1.0); keyLight.position.set(5,8,6); brainScene.add(keyLight); brainLights.key=keyLight;
-  const fillLight=new THREE.DirectionalLight(0x334466,0.5); fillLight.position.set(-5,-3,-4); brainScene.add(fillLight);
-  // Neural glow lights
+
+  try{
+    brainRenderer=new THREE.WebGLRenderer({canvas:cv,antialias:true,alpha:false});
+    brainRenderer.setSize(w,h);
+    brainRenderer.setPixelRatio(Math.min(window.devicePixelRatio,2));
+  }catch(e){console.warn('Brain WebGL init failed:',e);return;}
+
+  brainScene.add(new THREE.AmbientLight(0x222233,1.2));
+  const kl=new THREE.DirectionalLight(0xaabbff,1.0); kl.position.set(5,8,6); brainScene.add(kl);
+  brainScene.add(new THREE.DirectionalLight(0x334466,0.5)).position.set(-5,-3,-4);
+
   ['frontal','parietal','occipital','temporal','cerebellum','brainstem'].forEach(k=>{
     const pl=new THREE.PointLight(0x8844ff,0,4); brainScene.add(pl); brainLights[k]=pl;
   });
+
   buildBrainMeshes();
   brainFreqCanvas=document.getElementById('brainFreqCanvas');
   brainFreqCtx=brainFreqCanvas.getContext('2d');
-  (function render3D(){requestAnimationFrame(render3D);brainRenderer.render(brainScene,brainCamera);})();
+
+  (function r3d(){requestAnimationFrame(r3d);if(brainRenderer)brainRenderer.render(brainScene,brainCamera);})();
 }
 
 function buildBrainMeshes(){
   const group=new THREE.Group(); brainScene.add(group); brainMeshes.group=group;
-  // Main cerebrum — slightly flattened sphere
-  const cerebrumMat=new THREE.MeshPhongMaterial({color:0x3a2a45,emissive:0x080011,shininess:90,specular:0x332244});
   const cerebrumGeo=new THREE.SphereGeometry(3.0,48,32);
-  // Add gyri-like perturbations via vertex displacement
   const pos=cerebrumGeo.attributes.position;
   for(let i=0;i<pos.count;i++){
     const x=pos.getX(i),y=pos.getY(i),z=pos.getZ(i);
@@ -1788,134 +1890,84 @@ function buildBrainMeshes(){
     pos.setXYZ(i,x*nf,y*nf,z*nf);
   }
   cerebrumGeo.computeVertexNormals();
-  const cerebrum=new THREE.Mesh(cerebrumGeo,cerebrumMat); cerebrum.scale.y=0.88; group.add(cerebrum); brainMeshes.cerebrum=cerebrum;
+  const cerebrum=new THREE.Mesh(cerebrumGeo,new THREE.MeshPhongMaterial({color:0x3a2a45,emissive:0x080011,shininess:90,specular:0x332244}));
+  cerebrum.scale.y=0.88; group.add(cerebrum); brainMeshes.cerebrum=cerebrum;
 
-  // Corpus callosum (center band)
-  const ccMat=new THREE.MeshPhongMaterial({color:0x554466,emissive:0x110022,shininess:60});
-  const ccGeo=new THREE.CylinderGeometry(1.2,1.0,0.4,20); const cc=new THREE.Mesh(ccGeo,ccMat); cc.rotation.z=Math.PI/2; cc.position.y=0.2; group.add(cc); brainMeshes.cc=cc;
+  const cc=new THREE.Mesh(new THREE.CylinderGeometry(1.2,1.0,0.4,20),new THREE.MeshPhongMaterial({color:0x554466,emissive:0x110022,shininess:60}));
+  cc.rotation.z=Math.PI/2; cc.position.y=0.2; group.add(cc);
 
-  // Left hemisphere overlay
-  const lhMat=new THREE.MeshPhongMaterial({color:0x442255,emissive:0x0a001a,transparent:true,opacity:0.7,side:THREE.FrontSide,shininess:70});
-  const lhGeo=new THREE.SphereGeometry(2.95,32,20);
-  const lh=new THREE.Mesh(lhGeo,lhMat); lh.scale.set(0.5,0.88,1.0); lh.position.x=-0.5; group.add(lh); brainMeshes.lh=lh;
+  const makeHemi=(px,mat)=>{const m=new THREE.Mesh(new THREE.SphereGeometry(2.95,32,20),mat);m.scale.set(0.5,0.88,1.0);m.position.x=px;group.add(m);return m;};
+  brainMeshes.lh=makeHemi(-0.5,new THREE.MeshPhongMaterial({color:0x442255,emissive:0x0a001a,transparent:true,opacity:0.7,shininess:70}));
+  brainMeshes.rh=makeHemi(0.5,new THREE.MeshPhongMaterial({color:0x442266,emissive:0x0a001a,transparent:true,opacity:0.7,shininess:70}));
 
-  // Right hemisphere overlay
-  const rhMat=new THREE.MeshPhongMaterial({color:0x442266,emissive:0x0a001a,transparent:true,opacity:0.7,side:THREE.FrontSide,shininess:70});
-  const rhGeo=new THREE.SphereGeometry(2.95,32,20);
-  const rh=new THREE.Mesh(rhGeo,rhMat); rh.scale.set(0.5,0.88,1.0); rh.position.x=0.5; group.add(rh); brainMeshes.rh=rh;
+  const addLobe=(px,py,pz,sx,sy,sz,color,emissive,key)=>{
+    const m=new THREE.Mesh(new THREE.SphereGeometry(1.3,20,14),new THREE.MeshPhongMaterial({color,emissive,transparent:true,opacity:0.5,shininess:80}));
+    m.position.set(px,py,pz);m.scale.set(sx,sy,sz);group.add(m);brainMeshes[key]=m;
+    if(brainLights[key])brainLights[key].position.copy(m.position);
+    return m;
+  };
+  addLobe(0,1.0,2.2,1.8,0.8,0.7,0x6644aa,0x220044,'frontal');
+  addLobe(0,2.0,0,1.6,0.7,1.0,0x4455bb,0x001133,'parietal');
+  addLobe(0,0.5,-2.2,1.4,0.8,0.7,0x334488,0x001122,'occipital');
+  addLobe(2.4,0,-0.5,0.6,0.7,1.2,0x5533aa,0x110022,'temporal');
 
-  // Frontal lobe highlight
-  const flMat=new THREE.MeshPhongMaterial({color:0x6644aa,emissive:0x220044,transparent:true,opacity:0.5,shininess:80});
-  const fl=new THREE.Mesh(new THREE.SphereGeometry(1.5,20,14),flMat); fl.position.set(0,1.0,2.2); fl.scale.set(1.8,0.8,0.7); group.add(fl); brainMeshes.frontal=fl;
-  brainLights.frontal.position.copy(fl.position);
-
-  // Parietal lobe highlight
-  const plMat=new THREE.MeshPhongMaterial({color:0x4455bb,emissive:0x001133,transparent:true,opacity:0.5,shininess:80});
-  const pl=new THREE.Mesh(new THREE.SphereGeometry(1.3,20,14),plMat); pl.position.set(0,2.0,0); pl.scale.set(1.6,0.7,1.0); group.add(pl); brainMeshes.parietal=pl;
-  brainLights.parietal.position.copy(pl.position);
-
-  // Occipital lobe
-  const olMat=new THREE.MeshPhongMaterial({color:0x334488,emissive:0x001122,transparent:true,opacity:0.5,shininess:80});
-  const ol=new THREE.Mesh(new THREE.SphereGeometry(1.2,18,12),olMat); ol.position.set(0,0.5,-2.2); ol.scale.set(1.4,0.8,0.7); group.add(ol); brainMeshes.occipital=ol;
-  brainLights.occipital.position.copy(ol.position);
-
-  // Temporal lobe
-  const tlMat=new THREE.MeshPhongMaterial({color:0x5533aa,emissive:0x110022,transparent:true,opacity:0.5,shininess:80});
-  const tl=new THREE.Mesh(new THREE.SphereGeometry(1.1,18,12),tlMat); tl.position.set(2.4,0,-0.5); tl.scale.set(0.6,0.7,1.2); group.add(tl); brainMeshes.temporal=tl;
-  brainLights.temporal.position.copy(tl.position);
-
-  // Cerebellum
-  const cbMat=new THREE.MeshPhongMaterial({color:0x2a2255,emissive:0x040011,shininess:100});
   const cbGeo=new THREE.SphereGeometry(1.5,24,16);
-  // Add lamellar texture
   const cbPos=cbGeo.attributes.position;
-  for(let i=0;i<cbPos.count;i++){
-    const y=cbPos.getY(i);
-    const n=0.12*Math.sin(y*8);
-    const x=cbPos.getX(i),z=cbPos.getZ(i), len=Math.sqrt(x*x+y*y+z*z);
-    const nf=(len+n)/len;
-    cbPos.setXYZ(i,x*nf,y*nf,z*nf);
-  }
+  for(let i=0;i<cbPos.count;i++){const y=cbPos.getY(i);const n=0.12*Math.sin(y*8);const x=cbPos.getX(i),z=cbPos.getZ(i),len=Math.sqrt(x*x+y*y+z*z);const nf=(len+n)/len;cbPos.setXYZ(i,x*nf,y*nf,z*nf);}
   cbGeo.computeVertexNormals();
-  const cb=new THREE.Mesh(cbGeo,cbMat); cb.position.set(0,-2.2,-1.5); group.add(cb); brainMeshes.cerebellum=cb;
-  brainLights.cerebellum.position.copy(cb.position);
+  const cb=new THREE.Mesh(cbGeo,new THREE.MeshPhongMaterial({color:0x2a2255,emissive:0x040011,shininess:100}));
+  cb.position.set(0,-2.2,-1.5); group.add(cb); brainMeshes.cerebellum=cb;
+  if(brainLights.cerebellum)brainLights.cerebellum.position.copy(cb.position);
 
-  // Brain stem
-  const bsMat=new THREE.MeshPhongMaterial({color:0x221133,emissive:0x040008,shininess:60});
-  const bs=new THREE.Mesh(new THREE.CylinderGeometry(0.5,0.4,2.2,12),bsMat); bs.position.set(0,-2.8,-0.8); group.add(bs); brainMeshes.brainstem=bs;
-  brainLights.brainstem.position.copy(bs.position);
+  const bs=new THREE.Mesh(new THREE.CylinderGeometry(0.5,0.4,2.2,12),new THREE.MeshPhongMaterial({color:0x221133,emissive:0x040008,shininess:60}));
+  bs.position.set(0,-2.8,-0.8); group.add(bs); brainMeshes.brainstem=bs;
+  if(brainLights.brainstem)brainLights.brainstem.position.copy(bs.position);
 
-  // Thalamus (inner, glowing)
-  const thalMat=new THREE.MeshPhongMaterial({color:0x664488,emissive:0x220033,transparent:true,opacity:0.8,shininess:120});
-  const thal=new THREE.Mesh(new THREE.SphereGeometry(0.6,16,12),thalMat); thal.position.set(0,-0.5,0); group.add(thal); brainMeshes.thalamus=thal;
-
-  // Neural pathway lines (fibers)
-  const fibMat=new THREE.LineBasicMaterial({color:0x6633ff,transparent:true,opacity:0.4});
-  for(let i=0;i<8;i++){
-    const pts=[new THREE.Vector3((Math.random()-0.5)*2,Math.random()*2-1,(Math.random()-0.5)*2),new THREE.Vector3((Math.random()-0.5)*4,Math.random()*3-1.5,(Math.random()-0.5)*3)];
-    const geo=new THREE.BufferGeometry().setFromPoints(pts);
-    const line=new THREE.Line(geo,fibMat); group.add(line);
-    brainMeshes['fiber'+i]=line;
-  }
+  const thal=new THREE.Mesh(new THREE.SphereGeometry(0.6,16,12),new THREE.MeshPhongMaterial({color:0x664488,emissive:0x220033,transparent:true,opacity:0.8,shininess:120}));
+  thal.position.set(0,-0.5,0); group.add(thal); brainMeshes.thalamus=thal;
 
   group.rotation.y=0.2; group.rotation.x=-0.05;
 }
 
 function updateBrain3D(){
-  if(!brainScene) return;
+  if(!brainScene||!brainMeshes.group) return;
   const t=state.time/1000;
   const bs=state.brainState;
   const amp=state.neuralAmp;
-
-  // EEG-driven oscillations per brain state
   const freqMap={awake:10.5,relax:9.0,sleep:5.5,deep:2.5,seiz:3.5,focus:22.0};
   const ampMap={awake:0.8,relax:0.6,sleep:0.5,deep:0.9,seiz:1.8,focus:1.0};
   const baseFreq=(freqMap[bs]||10)*amp, baseAmp=(ampMap[bs]||0.8)*amp;
-
-  // Lobes oscillate with EEG freq
   const alphaPhase=Math.sin(t*baseFreq*Math.PI*2)*baseAmp;
-  const betaPhase=Math.sin(t*20*Math.PI*2)*0.4*amp;
-  const gammaPhase=Math.sin(t*40*Math.PI*2)*0.2*amp;
   const seizure=bs==='seiz';
-
-  // Per-lobe activation patterns
   const frontalAct=(bs==='focus'||bs==='awake')?Math.max(0,alphaPhase):Math.max(0,alphaPhase*0.5);
   const parietalAct=Math.max(0,Math.sin(t*baseFreq*Math.PI*2+1)*baseAmp*0.9);
   const occipitalAct=Math.max(0,Math.sin(t*baseFreq*Math.PI*2+2)*baseAmp*0.7);
   const cbAct=Math.max(0,Math.abs(Math.sin(t*8*Math.PI))*0.6);
 
-  // Emissive glow per lobe
-  const lobeColor=(act,r,g,b)=>new THREE.Color(r*act,g*act,b*act);
-  brainMeshes.frontal.material.emissive.copy(lobeColor(frontalAct*0.6,0.5,0.2,1.0));
-  brainMeshes.parietal.material.emissive.copy(lobeColor(parietalAct*0.5,0.3,0.4,1.0));
-  brainMeshes.occipital.material.emissive.copy(lobeColor(occipitalAct*0.5,0.2,0.5,1.0));
-  brainMeshes.cerebellum.material.emissive.copy(lobeColor(cbAct*0.4,0.3,0.3,0.8));
-  brainMeshes.thalamus.material.emissive.copy(new THREE.Color(0.3+Math.abs(alphaPhase)*0.3,0.1,0.5+Math.abs(alphaPhase)*0.3));
-
-  // Seizure: all lobes flicker rapidly
-  if(seizure){
+  if(brainMeshes.frontal)brainMeshes.frontal.material.emissive.setRGB(frontalAct*0.3,frontalAct*0.12,frontalAct*0.6);
+  if(brainMeshes.parietal)brainMeshes.parietal.material.emissive.setRGB(parietalAct*0.18,parietalAct*0.24,parietalAct*0.6);
+  if(brainMeshes.occipital)brainMeshes.occipital.material.emissive.setRGB(occipitalAct*0.12,occipitalAct*0.3,occipitalAct*0.6);
+  if(brainMeshes.cerebellum)brainMeshes.cerebellum.material.emissive.setRGB(cbAct*0.18,cbAct*0.18,cbAct*0.48);
+  if(brainMeshes.thalamus)brainMeshes.thalamus.material.emissive.setRGB(0.3+Math.abs(alphaPhase)*0.3,0.1,0.5+Math.abs(alphaPhase)*0.3);
+  if(seizure&&brainMeshes.frontal){
     const sz=Math.random();
-    brainMeshes.frontal.material.emissive.set(sz*0.9,sz*0.3,sz*0.6);
-    brainMeshes.parietal.material.emissive.set(sz*0.7,sz*0.2,sz*0.8);
-    brainMeshes.cerebrum.material.emissive.setRGB(sz*0.2,sz*0.1,sz*0.4);
+    brainMeshes.frontal.material.emissive.setRGB(sz*0.9,sz*0.3,sz*0.6);
+    if(brainMeshes.parietal)brainMeshes.parietal.material.emissive.setRGB(sz*0.7,sz*0.2,sz*0.8);
   }
+  if(brainMeshes.cerebrum){
+    brainMeshes.cerebrum.material.emissive.setRGB(
+      seizure?Math.random()*0.2:0.04+Math.abs(alphaPhase)*0.04,
+      seizure?Math.random()*0.05:0.01,
+      seizure?Math.random()*0.3:0.08+Math.abs(alphaPhase)*0.08
+    );
+  }
+  if(brainLights.frontal)brainLights.frontal.intensity=frontalAct*2.5;
+  if(brainLights.parietal)brainLights.parietal.intensity=parietalAct*2.0;
+  if(brainLights.occipital)brainLights.occipital.intensity=occipitalAct*1.8;
+  if(brainLights.cerebellum)brainLights.cerebellum.intensity=cbAct*1.5;
+  if(brainLights.temporal)brainLights.temporal.intensity=Math.abs(alphaPhase)*1.5;
+  if(brainLights.brainstem)brainLights.brainstem.intensity=0.5+cbAct*0.8;
 
-  // Cerebrum pulsates
-  brainMeshes.cerebrum.material.emissive.setRGB(
-    seizure?Math.random()*0.2:0.04+Math.abs(alphaPhase)*0.04,
-    seizure?Math.random()*0.05:0.01,
-    seizure?Math.random()*0.3:0.08+Math.abs(alphaPhase)*0.08
-  );
-
-  // Light intensities
-  brainLights.frontal.intensity=frontalAct*2.5;
-  brainLights.parietal.intensity=parietalAct*2.0;
-  brainLights.occipital.intensity=occipitalAct*1.8;
-  brainLights.cerebellum.intensity=cbAct*1.5;
-  brainLights.temporal.intensity=Math.abs(alphaPhase)*1.5;
-  brainLights.brainstem.intensity=0.5+cbAct*0.8;
-
-  // Camera auto-rotate
   if(brainViewMode==='auto'){
     brainAutoAngle+=0.0035;
     brainCamera.position.x=Math.sin(brainAutoAngle)*10;
@@ -1923,23 +1975,17 @@ function updateBrain3D(){
     brainCamera.position.y=1.5;
   }
   brainCamera.lookAt(0,0,0);
-
-  // Update brain UI
   updateBrainUI(frontalAct,parietalAct,occipitalAct,cbAct,bs);
   updateBrainFreqCanvas(baseFreq,amp);
 }
 
 function updateBrainUI(fl,pl,ol,cb,bs){
-  const setNode=(id,act)=>{
-    const el=document.getElementById(id);
-    if(el) el.className='path-node'+(act?' lit':'');
-  };
   const t=state.time/1000;
+  const setNode=(id,act)=>{const el=document.getElementById(id);if(el)el.className='path-node'+(act?' lit':'');};
   setNode('bn-cortex',fl>0.5||pl>0.5);
   setNode('bn-thal',Math.sin(t*2)>0);
   setNode('bn-hipp',Math.sin(t*1.5+1)>0.3);
   setNode('bn-bs',true);
-  const stateMap={awake:'Active',relax:'Relaxed',sleep:'NREM Sleep',deep:'Deep Δ',seiz:'SEIZURE',focus:'High Focus'};
   const setCell=(id,stId,active,label)=>{
     const el=document.getElementById(id),st=document.getElementById(stId);
     if(!el||!st) return;
@@ -1951,9 +1997,6 @@ function updateBrainUI(fl,pl,ol,cb,bs){
   setCell('bc-pl','bc-pl-st',pl>0.3,'Active');
   setCell('bc-ol','bc-ol-st',ol>0.3,'Active');
   setCell('bc-cb','bc-cb-st',cb>0.2,'Active');
-  // EEG wave powers
-  const freqMap={awake:10.5,relax:9.0,sleep:5.5,deep:2.5,seiz:3.5,focus:22.0};
-  const f=freqMap[bs]||10;
   const alphaP=bs==='relax'||bs==='awake'?70:bs==='seiz'?90:20;
   const betaP=bs==='focus'?80:bs==='awake'?45:15;
   const gammaP=bs==='focus'?60:bs==='seiz'?50:10;
@@ -1964,89 +2007,106 @@ function updateBrainUI(fl,pl,ol,cb,bs){
 
 function updateBrainFreqCanvas(baseFreq,amp){
   const cv=brainFreqCanvas; if(!cv||!brainFreqCtx) return;
-  const ctx=brainFreqCtx, rect=cv.getBoundingClientRect();
-  if(cv.width!==rect.width|0){cv.width=rect.width|0;cv.height=rect.height|0;}
-  const w=cv.width,h=cv.height; if(w===0||h===0) return;
+  const rect=cv.getBoundingClientRect();
+  const w=rect.width|0||cv.offsetWidth|0||243, h=rect.height|0||cv.offsetHeight|0||40;
+  if(cv.width!==w||cv.height!==h){cv.width=w;cv.height=h;}
+  if(w===0||h===0) return;
+  const ctx=brainFreqCtx, bs=state.brainState, maxFreq=80, N=w;
   ctx.fillStyle='#000'; ctx.fillRect(0,0,w,h);
-  const maxFreq=80, N=w, bs=state.brainState;
   for(let i=0;i<N;i++){
     const freq=(i/N)*maxFreq;
     let mag=0.015+0.01*Math.random();
-    // Delta (0.5-4 Hz)
     const deltaAmp=(bs==='deep'||bs==='sleep')?0.8:0.1;
     mag+=deltaAmp*Math.exp(-Math.pow((freq-2)/1.5,2));
-    // Theta (4-8 Hz)
     const thetaAmp=bs==='sleep'?0.6:0.2;
     mag+=thetaAmp*Math.exp(-Math.pow((freq-6)/1.5,2));
-    // Alpha (8-13 Hz)
     const alphaAmp=(bs==='relax'||bs==='awake')?0.9*amp:0.15;
     mag+=alphaAmp*Math.exp(-Math.pow((freq-baseFreq)/1.2,2));
-    // Beta (13-30 Hz)
     const betaAmp=bs==='focus'?0.8*amp:bs==='awake'?0.5:0.1;
     mag+=betaAmp*Math.exp(-Math.pow((freq-20)/3,2));
-    // Gamma (30-80 Hz)
     const gammaAmp=bs==='focus'?0.5:bs==='seiz'?0.7:0.1;
     mag+=gammaAmp*Math.exp(-Math.pow((freq-45)/8,2));
-    // Seizure spikes
     if(bs==='seiz') mag+=0.9*Math.exp(-Math.pow((freq-3.5)/0.5,2))*(0.5+0.5*Math.random());
     const barH=Math.min(h,mag*h*0.7);
     const hue=250-(freq/maxFreq)*80;
     ctx.fillStyle=`hsl(${hue},100%,${40+barH/h*45}%)`;
     ctx.fillRect(i,h-barH,1,barH);
   }
-  // Alpha marker
   const mx=(baseFreq/maxFreq)*w;
   ctx.strokeStyle='rgba(180,150,255,0.7)'; ctx.lineWidth=1;
   ctx.beginPath();ctx.moveTo(mx,0);ctx.lineTo(mx,h);ctx.stroke();
-  ctx.fillStyle='rgba(180,150,255,0.6)';ctx.font='8px Share Tech Mono';
+  ctx.fillStyle='rgba(180,150,255,0.6)';
+  ctx.font='8px Share Tech Mono';
   ctx.fillText(baseFreq.toFixed(1)+'Hz',Math.min(mx+2,w-40),9);
 }
 
 // ═══════════════════════════════════════════════════════════════
-//  3D LUNG ENGINE
+//  ORGAN VIEW CONTROL
 // ═══════════════════════════════════════════════════════════════
-let lungScene,lungCamera,lungRenderer,lungAutoAngle=0,lungViewMode='auto';
-let lungMeshes={},lungLights={};
-
-// Note: Lungs rendered in 3rd organ slot — we insert a 3rd organ panel dynamically
-// For the current 4-column layout, we encode lungs into the right panel vitals + mini canvas
-
-// ── ORGAN VIEW CONTROL ──
 window.setOrganView=function(organ,mode,el){
-  const btnClass=el.closest('.organ-panel').querySelectorAll('.ovbtn');
-  btnClass.forEach(b=>b.classList.remove('active'));
+  const panel=el.closest('.organ-panel');
+  if(panel) panel.querySelectorAll('.ovbtn').forEach(b=>b.classList.remove('active'));
   el.classList.add('active');
-  const cam=organ==='heart'?heartCamera:brainCamera;
-  const views={front:{x:0,y:1,z:10},side:{x:10,y:1,z:0},top:{x:0,y:12,z:0.1},auto:null};
+  const views={front:{x:0,y:1,z:10},side:{x:10,y:1,z:0},top:{x:0,y:12,z:0.1}};
   if(organ==='heart'){
     heartViewMode=mode;
-    if(mode!=='auto'&&views[mode]){const v=views[mode];heartCamera.position.set(v.x,v.y,v.z);}
+    if(mode!=='auto'&&views[mode]&&heartCamera){const v=views[mode];heartCamera.position.set(v.x,v.y,v.z);}
   } else {
     brainViewMode=mode;
-    if(mode!=='auto'&&views[mode]){const v=views[mode];brainCamera.position.set(v.x,v.y,v.z);}
+    if(mode!=='auto'&&views[mode]&&brainCamera){const v=views[mode];brainCamera.position.set(v.x,v.y,v.z);}
   }
 };
 
-// ── RESIZE ──
-function resizeOrgans(){
-  ['heartCanvas','brainCanvas'].forEach(id=>{
-    const cv=document.getElementById(id); if(!cv) return;
-    const w=cv.offsetWidth,h=cv.offsetHeight;
-    if(w>0&&h>0){
-      if(id==='heartCanvas'&&heartRenderer){heartRenderer.setSize(w,h);heartCamera.aspect=w/h;heartCamera.updateProjectionMatrix();}
-      if(id==='brainCanvas'&&brainRenderer){brainRenderer.setSize(w,h);brainCamera.aspect=w/h;brainCamera.updateProjectionMatrix();}
+// ═══════════════════════════════════════════════════════════════
+//  RESIZE
+// ═══════════════════════════════════════════════════════════════
+let resizeTimer=null;
+function handleResize(){
+  clearTimeout(resizeTimer);
+  resizeTimer=setTimeout(()=>{
+    initCanvases(); // re-size 2d canvases
+    // Resize 3D renderers
+    if(heartRenderer&&heartCamera){
+      const cv=document.getElementById('heartCanvas');
+      if(cv){
+        const p=cv.parentElement;
+        const w=p.offsetWidth||260,h=p.offsetHeight||180;
+        heartRenderer.setSize(w,h);
+        heartCamera.aspect=w/h;
+        heartCamera.updateProjectionMatrix();
+        cv.width=w; cv.height=h;
+      }
     }
-  });
+    if(brainRenderer&&brainCamera){
+      const cv=document.getElementById('brainCanvas');
+      if(cv){
+        const p=cv.parentElement;
+        const w=p.offsetWidth||260,h=p.offsetHeight||180;
+        brainRenderer.setSize(w,h);
+        brainCamera.aspect=w/h;
+        brainCamera.updateProjectionMatrix();
+        cv.width=w; cv.height=h;
+      }
+    }
+  },150);
 }
+window.addEventListener('resize',handleResize);
 
 // ═══════════════════════════════════════════════════════════════
 //  MAIN LOOP
 // ═══════════════════════════════════════════════════════════════
-let lastUpdate=0;
+let lastUpdate=0, lastSlowUpdate=0;
+const FRAME_MS = 1000/60;
+let lastTimestamp = 0;
+
 function mainLoop(ts){
   requestAnimationFrame(mainLoop);
-  state.time+=16.67;
+  if(!lastTimestamp) lastTimestamp=ts;
+  const dt=ts-lastTimestamp;
+  lastTimestamp=ts;
+  state.time+=Math.min(dt,32); // clamp to avoid jumps
   frameCount++;
+
   if(ts-lastFrameTime>1000){
     fps=frameCount;frameCount=0;lastFrameTime=ts;
     document.getElementById('frameRate').textContent=fps+' fps';
@@ -2054,15 +2114,22 @@ function mainLoop(ts){
     updateImpedance();
     updateDiagnostics();
   }
-  ensureCanvases();
+
+  // 2D renders every frame
   renderECG();
   renderTorso();
   renderOscilloscope();
+
+  // 3D updates
   updateHeart3D();
   updateBrain3D();
-  if(ts-lastUpdate>200){renderSpectrumBottom();lastUpdate=ts;}
+
+  // Slower updates
+  if(ts-lastSlowUpdate>200){renderSpectrumBottom();lastSlowUpdate=ts;}
+
   updateMetrics();
-  // Recording data capture
+
+  // Recording
   if(state.recording&&state.bufDsp.length>0){
     state.recData.push([state.time.toFixed(0),
       (state.bufRaw[state.bufRaw.length-1]||0).toFixed(4),
@@ -2072,23 +2139,30 @@ function mainLoop(ts){
   }
 }
 
-window.onload=function(){
+// ═══════════════════════════════════════════════════════════════
+//  INIT
+// ═══════════════════════════════════════════════════════════════
+function init(){
   buildLeadTabs();
   bindSliders();
   initTorsoDrag();
   buildLegend();
-  initHeart3D();
-  initBrain3D();
+  initCanvases();
+
+  // Give DOM a moment to render before starting 3D (especially on mobile)
+  setTimeout(()=>{
+    initHeart3D();
+    initBrain3D();
+  },100);
+
   requestAnimationFrame(mainLoop);
-};
+}
 
-window.onresize=function(){
-  ['ecgCanvas','oscCanvas','specCanvas','torsoCanvas'].forEach(id=>{
-    const el=document.getElementById(id); if(el){el.width=0;el.height=0;}
-  });
-  resizeOrgans();
-};
+if(document.readyState==='loading'){
+  document.addEventListener('DOMContentLoaded',init);
+} else {
+  init();
+}
 </script>
-
-
-</body></html>
+</body>
+</html>
